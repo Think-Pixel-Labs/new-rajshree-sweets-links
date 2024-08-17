@@ -37,13 +37,6 @@ body {
     margin-bottom: 30px;
 }
 
-.popup img {
-    width: 100px;
-    margin-top: -90px;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
 .popup h2 {
     font-size: 2.8em;
     font-weight: 600;
@@ -93,47 +86,46 @@ body {
 .button {
     display: flex;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
-    color: #333;
-    background-color: #f0f0f0;
+    color: #fff;
     border-radius: 10px;
-    padding: 10px;
-    transition: box-shadow 0.3s ease;
+    padding: 15px 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+    font-size: 1.1em;
+    width: 140px;
+    height: 60px;
 }
 
 .button:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
-.button img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: 10px;
+.button:first-child {
+    background-color: #CB202D;
 }
 
-.button.rectangle {
-    width: auto;
-    justify-content: flex-start;
-    gap: 10px;
+.button.website {
+    background-color: #07090F;
 }
 
-.button.rectangle img {
-    width: 120px;
-    height: 40px;
-    object-fit: contain;
-    margin-right: 0;
+.button.whatsapp {
+    background-color: #25D366;
 }
 
-.button span {
-    font-weight: 500;
+.button.facebook {
+    background-color: #1877F2;
 }
 
-.social img {
-    width: 50px !important;
-    height: 50px !important;
+.button.instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+.button.twitter {
+    background-color: #1DA1F2;
 }
 
 p {
@@ -189,18 +181,9 @@ p {
         font-size: 1em;
     }
 
-    .button img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .social img {
-        width: 40px !important;
-        height: 40px !important;
-    }
-
-    .button.rectangle img {
-        width: 100px;
-        height: 30px;
+    .button {
+        width: 120px;
+        height: 50px;
+        font-size: 1em;
     }
 }
