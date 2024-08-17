@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -39,9 +39,10 @@ body {
 
 .popup h2 {
     font-size: 2.8em;
-    font-weight: 600;
+    font-weight: 700;
     margin: 20px 0 15px;
     color: #c96064;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .popup p,
@@ -49,6 +50,7 @@ body {
     font-size: 1.2em;
     margin-bottom: 15px;
     line-height: 1.6;
+    font-weight: 400;
 }
 
 .visit {
@@ -60,18 +62,33 @@ body {
     font-size: 1.5em;
     margin-bottom: 20px;
     color: #c96064;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
 }
 
 .dev {
-    font-weight: 600;
+    font-weight: 500;
     color: #c96064;
-    text-decoration: underline;
+    text-decoration: none;
     transition: color 0.3s ease;
     font-size: 1.1em;
+    position: relative;
 }
 
-.dev:hover {
-    color: #cb6266;
+.dev::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #c96064;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.dev:hover::after {
+    transform: scaleX(1);
 }
 
 .icons {
@@ -89,19 +106,38 @@ body {
     justify-content: center;
     text-decoration: none;
     color: #fff;
-    border-radius: 10px;
-    padding: 15px 20px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-weight: 500;
+    border-radius: 50px;
+    padding: 15px 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
     font-size: 1.1em;
-    width: 140px;
+    width: 160px;
     height: 60px;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: all 0.5s;
+}
+
+.button:hover::before {
+    left: 100%;
 }
 
 .button:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .button:first-child {
@@ -132,6 +168,7 @@ p {
     margin-bottom: 20px;
     font-size: 1.1em;
     line-height: 1.6;
+    font-weight: 400;
 }
 
 .section {
@@ -146,17 +183,37 @@ p {
     display: inline-block;
     background-color: #c96064;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 25px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.review-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: all 0.5s;
+}
+
+.review-button:hover::before {
+    left: 100%;
 }
 
 .review-button:hover {
     background-color: #cb6266;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 600px) {
@@ -182,8 +239,8 @@ p {
     }
 
     .button {
-        width: 120px;
-        height: 50px;
-        font-size: 1em;
+        width: 140px;
+        height: 55px;
+        font-size: 0.9em;
     }
 }
