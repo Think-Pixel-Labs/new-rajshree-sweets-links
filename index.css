@@ -170,6 +170,14 @@ body {
     background-color: #1DA1F2;
 }
 
+.button.google {
+    background-color: #4285F4;
+}
+
+.button.justdial {
+    background-color: #FF6633;
+}
+
 p {
     margin-bottom: 20px;
     font-size: 1.1em;
