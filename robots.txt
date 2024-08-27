@@ -1,0 +1,5 @@
+# Rules for links subdomain
+User-agent: *
+Disallow: /
+
+Host: links.newrajshreesweets.com
