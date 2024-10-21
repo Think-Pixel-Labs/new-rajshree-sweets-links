@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -12,6 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 50px 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .complete-body {
@@ -20,12 +20,13 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
 }
 
 .container,
 .infos,
-.food-apps,
+.menu-section,
+.order-section,
 .social-links {
     width: 100%;
     background: #fff;
@@ -37,8 +38,9 @@ body {
     margin-bottom: 30px;
 }
 
-.popup h2 {
-    font-size: 2.8em;
+.popup h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
     font-weight: 700;
     margin: 20px 0 15px;
     color: #c96064;
@@ -58,7 +60,8 @@ body {
     color: #c96064;
 }
 
-.delivery {
+.section-title {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5em;
     margin-bottom: 20px;
     color: #c96064;
@@ -146,16 +149,24 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.button:first-child {
-    background-color: #CB202D;
+.button.zomato {
+    background: linear-gradient(to right, #CB202D, #FF645A);
+}
+
+.button.zomato:hover {
+    background: linear-gradient(to right, #FF645A, #CB202D);
 }
 
 .button.website {
-    background-color: #07090F;
+    background-color: #f59e0b;
 }
 
 .button.whatsapp {
     background-color: #25D366;
+}
+
+.button.whatsapp:hover {
+    background-color: #128C7E;
 }
 
 .button.facebook {
@@ -166,16 +177,20 @@ body {
     background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
 }
 
-.button.twitter {
-    background-color: #1DA1F2;
-}
-
 .button.google {
     background-color: #4285F4;
 }
 
+.button.google:hover {
+    background-color: #3367D6;
+}
+
 .button.justdial {
     background-color: #FF6633;
+}
+
+.button.x {
+    background-color: #000000;
 }
 
 p {
@@ -193,41 +208,17 @@ p {
     margin-bottom: 0;
 }
 
-.review-button {
-    display: inline-block;
-    background-color: #c96064;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.menu-section {
+    background-color: #fff9f9;
 }
 
-.review-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: all 0.5s;
+.button.menu-button {
+    background-color: #e11d48;
+    width: auto;
 }
 
-.review-button:hover::before {
-    left: 100%;
-}
-
-.review-button:hover {
-    background-color: #cb6266;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+.button.menu-button:hover {
+    background-color: #be123c;
 }
 
 @media (max-width: 600px) {
@@ -237,18 +228,19 @@ p {
 
     .container,
     .infos,
-    .food-apps,
+    .menu-section,
+    .order-section,
     .social-links {
         padding: 30px;
     }
 
-    .popup h2 {
-        font-size: 2.5em;
+    .popup h1 {
+        font-size: 1.8em;
     }
 
     .popup p,
     .visit,
-    .delivery {
+    .section-title {
         font-size: 1em;
     }
 
@@ -265,8 +257,8 @@ p {
 }
 
 @media (max-width: 400px) {
-    .popup h2 {
-        font-size: 2.2em;
+    .popup h1 {
+        font-size: 1.6em;
     }
 
     .button {
