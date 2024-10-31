@@ -22,57 +22,86 @@
             </div>
         </div>
 
-        <div class="menu-section">
+        <div class="card menu-section" onclick="toggleDialog('menuDialog')">
             <h2 class="section-title">Our Delightful Menu</h2>
-            <p>Discover our wide array of mouthwatering sweets and delicacies:</p>
-            <div class="icons">
-                <a href="https://menu.newrajshreesweets.com" class="button menu-button" target="_blank"
-                    rel="noopener noreferrer">
-                    Explore Menu
-                </a>
-            </div>
         </div>
 
-        <div class="order-section">
+        <div class="card order-section" onclick="toggleDialog('orderDialog')">
             <h2 class="section-title">Order Online</h2>
-            <p>Savor our sweets from the comfort of your home:</p>
-            <div class="icons">
-                <a href="https://www.zomato.com/vi/varanasi/new-rajshree-sweets-nadesar" class="button zomato"
-                    target="_blank" rel="noopener noreferrer">
-                    Zomato
-                </a>
-                <a href="https://newrajshreesweets.com/" class="button website" target="_blank"
-                    rel="noopener noreferrer">
-                    Our Website
-                </a>
-            </div>
         </div>
 
-        <div class="social-links">
+        <div class="card social-links" onclick="toggleDialog('socialDialog')">
             <h2 class="section-title">Stay Connected</h2>
-            <p>Join our sweet community for updates and special offers:</p>
-            <div class="icons">
-                <a href="https://wa.me/919792677770?text=Hello%2C%20I'm%20interested%20in%20your%20sweets.%20Can%20you%20provide%20more%20information%3F"
-                    class="button whatsapp" target="_blank" rel="noopener noreferrer">
-                    WhatsApp
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61560995317454" class="button facebook" target="_blank"
-                    rel="noopener noreferrer">
-                    Facebook
-                </a>
-                <a href="https://www.instagram.com/newrajshreesweets/" class="button instagram" target="_blank"
-                    rel="noopener noreferrer">
-                    Instagram
-                </a>
-                <a href="https://x.com/newrajshree_vns" class="button x" target="_blank" rel="noopener noreferrer">
-                    X
-                </a>
-            </div>
         </div>
 
-        <div class="infos">
-            <div class="section">
-                <h3 class="section-title">Share Your Sweet Experience</h3>
+        <div class="card review-section" onclick="toggleDialog('reviewDialog')">
+            <h2 class="section-title">Share Your Sweet Experience</h2>
+        </div>
+
+        <div class="dev-info">
+            <h3 class="section-title">Crafted with Love</h3>
+            <p>Website and Kiosk lovingly developed by:</p>
+            <a class="dev" href="https://kesharipiyush24.github.io/" target="_blank" rel="noopener noreferrer">Piyush
+                Keshari</a>
+        </div>
+
+        <dialog id="menuDialog" class="modal">
+            <div class="modal-content">
+                <h2>Our Delightful Menu</h2>
+                <p>Discover our wide array of mouthwatering sweets and delicacies:</p>
+                <div class="icons">
+                    <a href="https://menu.newrajshreesweets.com" class="button menu-button" target="_blank"
+                        rel="noopener noreferrer">
+                        Explore Menu
+                    </a>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog id="orderDialog" class="modal">
+            <div class="modal-content">
+                <h2>Order Online</h2>
+                <p>Savor our sweets from the comfort of your home:</p>
+                <div class="icons">
+                    <a href="https://www.zomato.com/vi/varanasi/new-rajshree-sweets-nadesar" class="button zomato"
+                        target="_blank" rel="noopener noreferrer">
+                        Zomato
+                    </a>
+                    <a href="https://newrajshreesweets.com/" class="button website" target="_blank"
+                        rel="noopener noreferrer">
+                        Our Website
+                    </a>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog id="socialDialog" class="modal">
+            <div class="modal-content">
+                <h2>Stay Connected</h2>
+                <p>Join our sweet community for updates and special offers:</p>
+                <div class="icons">
+                    <a href="https://wa.me/919792677770?text=Hello%2C%20I'm%20interested%20in%20your%20sweets.%20Can%20you%20provide%20more%20information%3F"
+                        class="button whatsapp" target="_blank" rel="noopener noreferrer">
+                        WhatsApp
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61560995317454" class="button facebook"
+                        target="_blank" rel="noopener noreferrer">
+                        Facebook
+                    </a>
+                    <a href="https://www.instagram.com/newrajshreesweets/" class="button instagram" target="_blank"
+                        rel="noopener noreferrer">
+                        Instagram
+                    </a>
+                    <a href="https://x.com/newrajshree_vns" class="button x" target="_blank" rel="noopener noreferrer">
+                        X
+                    </a>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog id="reviewDialog" class="modal">
+            <div class="modal-content">
+                <h2>Share Your Sweet Experience</h2>
                 <p>Your feedback helps us serve you better. Please leave us a review:</p>
                 <div class="icons">
                     <a class="button google" href="https://g.page/r/Ce2YNkMx7_wQEBE/review" target="_blank"
@@ -81,14 +110,44 @@
                         rel="noopener noreferrer">Justdial Review</a>
                 </div>
             </div>
-            <div class="section">
-                <h3 class="section-title">Crafted with Love</h3>
-                <p>Website and Kiosk lovingly developed by:</p>
-                <a class="dev" href="https://kesharipiyush24.github.io/" target="_blank"
-                    rel="noopener noreferrer">Piyush Keshari</a>
-            </div>
-        </div>
+        </dialog>
     </div>
+
+    <script>
+        function toggleDialog(dialogId) {
+            const dialog = document.getElementById(dialogId);
+
+            if (dialog.open) {
+                dialog.close();
+            } else {
+                dialog.showModal();
+            }
+        }
+
+        // Add click event listeners to all dialogs once when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const dialogs = document.querySelectorAll('dialog');
+
+            dialogs.forEach(dialog => {
+                dialog.addEventListener('click', (e) => {
+                    const dialogDimensions = dialog.getBoundingClientRect();
+                    if (
+                        e.clientX < dialogDimensions.left ||
+                        e.clientX > dialogDimensions.right ||
+                        e.clientY < dialogDimensions.top ||
+                        e.clientY > dialogDimensions.bottom
+                    ) {
+                        dialog.close();
+                    }
+                });
+
+                // Prevent clicks inside the modal from closing it
+                dialog.querySelector('.modal-content').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
