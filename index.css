@@ -627,3 +627,107 @@ p {
         font-size: 0.9em;
     }
 }
+
+/* Update card styles for better mobile display */
+.card {
+    padding: 14px 18px;
+    /* Reduced padding */
+    gap: 10px;
+    margin-bottom: 10px;
+    /* Reduced margin */
+}
+
+.card i {
+    font-size: 1.1em;
+    /* Slightly smaller icons */
+}
+
+.card .section-title {
+    font-size: 1.1em;
+    /* Smaller base font size */
+    margin: 0;
+}
+
+/* Update header styles */
+@media (max-width: 768px) {
+    .complete-body {
+        padding: 20px 16px;
+        gap: 10px;
+    }
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .profile-image {
+        width: 72px;
+        /* Smaller profile image */
+        height: 72px;
+        margin-bottom: 12px;
+    }
+
+    .header h1 {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .tagline {
+        font-size: 13px;
+    }
+
+    /* Adjust modal styles */
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+
+    .modal-content p {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+    }
+
+    /* Adjust button styles */
+    .button {
+        padding: 10px 15px;
+        font-size: 0.8em;
+        height: 40px;
+    }
+
+    /* Developer badge adjustments */
+    .developer-badge {
+        padding: 12px 16px;
+    }
+
+    .developer-info p {
+        font-size: 0.75em;
+    }
+
+    .developer-name {
+        font-size: 0.85em;
+    }
+
+    .developer-badge i {
+        font-size: 1em;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 360px) {
+    .card .section-title {
+        font-size: 1em;
+    }
+
+    .card i {
+        font-size: 1em;
+    }
+
+    .button {
+        font-size: 0.75em;
+        padding: 8px 12px;
+        height: 36px;
+    }
+}
