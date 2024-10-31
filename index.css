@@ -567,30 +567,39 @@ p {
 .developer-badge {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 12px 20px;
+    justify-content: space-between;
+    padding: 16px 20px;
     background: rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+.developer-info {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 12px;
 }
 
 .developer-badge i {
+    flex-shrink: 0;
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.1em;
+    font-size: 1.2em;
+    width: 24px;
+    text-align: center;
 }
 
 .developer-badge .fa-arrow-right {
-    transition: transform 0.3s ease;
+    width: 24px;
+    opacity: 0.9;
+    font-size: 1em;
+    margin-left: auto;
 }
 
 .developer-link:hover .fa-arrow-right {
     transform: translateX(3px);
-}
-
-.developer-info {
-    text-align: center;
+    opacity: 1;
 }
 
 .developer-info p {
