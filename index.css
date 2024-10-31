@@ -551,3 +551,70 @@ p {
 .button i {
     font-size: 1.1em;
 }
+
+/* Replace dev-info styles with these new styles */
+.developer-link {
+    text-decoration: none;
+    width: 100%;
+    margin-top: 30px;
+    transition: transform 0.3s ease;
+}
+
+.developer-link:hover {
+    transform: translateY(-2px);
+}
+
+.developer-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.developer-badge i {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+}
+
+.developer-badge .fa-arrow-right {
+    transition: transform 0.3s ease;
+}
+
+.developer-link:hover .fa-arrow-right {
+    transform: translateX(3px);
+}
+
+.developer-info {
+    text-align: center;
+}
+
+.developer-info p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85em;
+    margin: 0;
+}
+
+.developer-name {
+    color: white;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+@media (max-width: 768px) {
+    .developer-badge {
+        padding: 10px 16px;
+    }
+
+    .developer-info p {
+        font-size: 0.8em;
+    }
+
+    .developer-name {
+        font-size: 0.9em;
+    }
+}
