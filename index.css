@@ -534,3 +534,20 @@ p {
         font-size: 14px;
     }
 }
+
+/* Add these styles for the phone button */
+.button.phone {
+    background: linear-gradient(to right, #4CAF50, #45a049);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.button.phone:hover {
+    background: linear-gradient(to right, #45a049, #4CAF50);
+}
+
+.button i {
+    font-size: 1.1em;
+}

@@ -36,6 +36,11 @@
             <h2 class="section-title">Stay Connected</h2>
         </div>
 
+        <div class="card contact-section" onclick="toggleDialog('contactDialog')">
+            <i class="fas fa-phone"></i>
+            <h2 class="section-title">Contact Us</h2>
+        </div>
+
         <div class="card review-section" onclick="toggleDialog('reviewDialog')">
             <i class="fas fa-star"></i>
             <h2 class="section-title">Share Your Sweet Experience</h2>
@@ -97,6 +102,22 @@
                     </a>
                     <a href="https://x.com/newrajshree_vns" class="button x" target="_blank" rel="noopener noreferrer">
                         X
+                    </a>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog id="contactDialog" class="modal">
+            <div class="modal-content">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for orders and inquiries:</p>
+                <div class="icons">
+                    <a href="tel:+919792677770" class="button phone" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-phone"></i> +91 97926 77770
+                    </a>
+                    <a href="https://wa.me/919792677770?text=Hello%2C%20I'm%20interested%20in%20your%20sweets.%20Can%20you%20provide%20more%20information%3F"
+                        class="button whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                 </div>
             </div>
