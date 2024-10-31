@@ -10,31 +10,34 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image" href="https://assets.newrajshreesweets.com/icon.webp" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
     <div class="complete-body">
-        <div class="container welcome-section">
-            <div class="popup">
-                <h1>Welcome to New Rajshree Sweets</h1>
-                <p>Indulge in the rich flavors of authentic Indian sweets and savories.</p>
-                <p class="visit">Experience the taste of tradition with every bite!</p>
-            </div>
+        <div class="header">
+            <img src="https://assets.newrajshreesweets.com/icon.webp" alt="New Rajshree Sweets" class="profile-image">
+            <h1>New Rajshree Sweets</h1>
+            <p class="tagline">Experience the taste of tradition with every bite!</p>
         </div>
 
         <div class="card menu-section" onclick="toggleDialog('menuDialog')">
+            <i class="fas fa-book-open"></i>
             <h2 class="section-title">Our Delightful Menu</h2>
         </div>
 
         <div class="card order-section" onclick="toggleDialog('orderDialog')">
+            <i class="fas fa-shopping-bag"></i>
             <h2 class="section-title">Order Online</h2>
         </div>
 
         <div class="card social-links" onclick="toggleDialog('socialDialog')">
+            <i class="fas fa-share-nodes"></i>
             <h2 class="section-title">Stay Connected</h2>
         </div>
 
         <div class="card review-section" onclick="toggleDialog('reviewDialog')">
+            <i class="fas fa-star"></i>
             <h2 class="section-title">Share Your Sweet Experience</h2>
         </div>
 

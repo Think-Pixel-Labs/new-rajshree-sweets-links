@@ -432,3 +432,105 @@ p {
         font-size: 1.3em;
     }
 }
+
+/* Add these new styles and update some existing ones */
+
+/* Header styles */
+.header {
+    text-align: center;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.profile-image {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: white;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.tagline {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+/* Update card styles */
+.card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Icon styles */
+.card i {
+    font-size: 1.2em;
+    color: #c96064;
+    width: 24px;
+    text-align: center;
+}
+
+/* Update section title for cards */
+.card .section-title {
+    margin: 0;
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Remove the welcome section styles as it's no longer needed */
+.container.welcome-section {
+    display: none;
+}
+
+/* Update complete body spacing */
+.complete-body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .complete-body {
+        padding: 24px 16px;
+    }
+
+    .header {
+        margin-bottom: 24px;
+    }
+
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .tagline {
+        font-size: 14px;
+    }
+}
