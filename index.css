@@ -150,8 +150,20 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+.button.swiggy {
+    background: linear-gradient(to right, #FC8019, #FF661D);
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.button.swiggy:hover {
+    background: linear-gradient(to right, #FF661D, #FC8019);
+}
+
 .button.zomato {
     background: linear-gradient(to right, #CB202D, #FF645A);
+    color: white;
+    transition: background 0.3s ease;
 }
 
 .button.zomato:hover {
@@ -160,6 +172,8 @@ body {
 
 .button.website {
     background-color: #f59e0b;
+    color: white;
+    transition: background 0.3s ease;
 }
 
 .button.whatsapp {
