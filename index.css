@@ -1,3 +1,26 @@
+:root {
+    --pallette-1: #8b1a2b;
+    --pallette-2: #d4a843;
+    --pallette-3: #fff8f0;
+    --pallette-4: #2c2c2c;
+    --pallette-accent: #c9376b;
+
+    --gradient-primary: linear-gradient(135deg, #8b1a2b 0%, #c9376b 100%);
+    --gradient-warm: linear-gradient(135deg, #8b1a2b 0%, #6b1520 50%, #3d0c14 100%);
+    --gradient-gold: linear-gradient(90deg, #d4a843, #e8c36a);
+    --gradient-cream: linear-gradient(180deg, #fff8f0 0%, #fff1e0 100%);
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,13 +28,13 @@
 }
 
 body {
-    background-image: linear-gradient(to right top, #cb6266, #c96064, #c75d61, #c45b5f, #c2585d);
+    background: var(--gradient-warm);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 50px 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .complete-body {
@@ -30,21 +53,21 @@ body {
 .order-section,
 .social-links {
     width: 100%;
-    background: #fff;
+    background: var(--pallette-3);
     border-radius: 20px;
     text-align: center;
     padding: 40px;
     color: #333;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-xl);
     margin-bottom: 30px;
 }
 
 .popup h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lora', serif;
     font-size: 2em;
     font-weight: 700;
     margin: 20px 0 15px;
-    color: #c96064;
+    color: var(--pallette-1);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -58,21 +81,21 @@ body {
 
 .visit {
     font-weight: 600;
-    color: #c96064;
+    color: var(--pallette-1);
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lora', serif;
     font-size: 1.5em;
     margin-bottom: 20px;
-    color: #c96064;
+    color: var(--pallette-1);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     font-weight: 700;
 }
 
 .dev {
     font-weight: 600;
-    color: #c96064;
+    color: var(--pallette-1);
     text-decoration: none;
     transition: all 0.3s ease;
     font-size: 1.1em;
@@ -88,17 +111,17 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #c96064;
+    background-color: var(--pallette-1);
     transition: all 0.3s ease;
 }
 
 .dev:hover {
-    color: #cb6266;
+    color: var(--pallette-accent);
 }
 
 .dev:hover::after {
     height: 3px;
-    background-color: #cb6266;
+    background-color: var(--pallette-accent);
 }
 
 .icons {
@@ -115,11 +138,11 @@ body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #fff;
+    color: var(--pallette-3);
     border-radius: 50px;
     padding: 12px 20px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-md);
     font-weight: 600;
     font-size: 1em;
     width: calc(50% - 7.5px);
@@ -137,7 +160,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(120deg, transparent, rgba(255, 248, 240, 0.3), transparent);
     transition: all 0.5s;
 }
 
@@ -152,7 +175,7 @@ body {
 
 .button.swiggy {
     background: linear-gradient(to right, #FC8019, #FF661D);
-    color: white;
+    color: var(--pallette-3);
     transition: background 0.3s ease;
 }
 
@@ -162,7 +185,7 @@ body {
 
 .button.zomato {
     background: linear-gradient(to right, #CB202D, #FF645A);
-    color: white;
+    color: var(--pallette-3);
     transition: background 0.3s ease;
 }
 
@@ -172,7 +195,7 @@ body {
 
 .button.website {
     background-color: #f59e0b;
-    color: white;
+    color: var(--pallette-3);
     transition: background 0.3s ease;
 }
 
@@ -224,16 +247,16 @@ p {
 }
 
 .menu-section {
-    background-color: #fff9f9;
+    background-color: var(--pallette-3);
 }
 
 .button.menu-button {
-    background-color: #e11d48;
+    background: var(--gradient-primary);
     width: auto;
 }
 
 .button.menu-button:hover {
-    background-color: #be123c;
+    background: var(--gradient-warm);
 }
 
 @media (max-width: 600px) {
@@ -285,13 +308,13 @@ p {
 /* Add these new styles to your existing CSS */
 
 .card {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 248, 240, 0.95);
     border-radius: 20px;
     padding: 15px 25px;
     margin-bottom: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-xl);
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -301,7 +324,7 @@ p {
 
 .card:hover {
     transform: translateY(-3px);
-    background: rgba(255, 255, 255, 1);
+    background: rgba(255, 248, 240, 1);
 }
 
 .card::after {
@@ -324,7 +347,7 @@ p {
     padding: 0;
     max-width: 90%;
     width: 450px;
-    background: white;
+    background: var(--pallette-3);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -353,6 +376,7 @@ p {
 .modal-content {
     padding: 30px;
     text-align: center;
+    background: var(--gradient-cream);
 }
 
 .close-button {
@@ -372,7 +396,7 @@ p {
 
 .container.welcome-section {
     margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255, 248, 240, 0.98);
 }
 
 @media (max-width: 768px) {
@@ -393,13 +417,13 @@ p {
 /* Developer info styling */
 .dev-info {
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 248, 240, 0.95);
     border-radius: 20px;
     text-align: center;
     padding: 30px;
     margin-top: auto;
     margin-bottom: 0;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-xl);
 }
 
 /* Update complete-body to allow dev-info to stick to bottom */
@@ -432,10 +456,10 @@ p {
 
 /* Update modal heading styles to match card headings */
 .modal-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lora', serif;
     font-size: 1.5em;
     margin-bottom: 20px;
-    color: #c96064;
+    color: var(--pallette-1);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     font-weight: 700;
 }
@@ -461,20 +485,20 @@ p {
     height: 96px;
     border-radius: 50%;
     margin-bottom: 16px;
-    border: 3px solid white;
+    border: 3px solid var(--pallette-2);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .header h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lora', serif;
     font-size: 24px;
-    color: white;
+    color: var(--pallette-2);
     margin-bottom: 8px;
     font-weight: 700;
 }
 
 .tagline {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 248, 240, 0.9);
     font-size: 16px;
     margin-bottom: 0;
 }
@@ -482,7 +506,7 @@ p {
 /* Update card styles */
 .card {
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 248, 240, 0.95);
     border-radius: 12px;
     padding: 16px 20px;
     cursor: pointer;
@@ -497,7 +521,7 @@ p {
 /* Icon styles */
 .card i {
     font-size: 1.2em;
-    color: #c96064;
+    color: var(--pallette-1);
     width: 24px;
     text-align: center;
 }
@@ -583,10 +607,10 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 16px 20px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 248, 240, 0.15);
     border-radius: 12px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 248, 240, 0.2);
     width: 100%;
 }
 
@@ -598,7 +622,7 @@ p {
 
 .developer-badge i {
     flex-shrink: 0;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 248, 240, 0.9);
     font-size: 1.2em;
     width: 24px;
     text-align: center;
@@ -617,13 +641,13 @@ p {
 }
 
 .developer-info p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 248, 240, 0.8);
     font-size: 0.85em;
     margin: 0;
 }
 
 .developer-name {
-    color: white;
+    color: var(--pallette-2);
     font-weight: 600;
     font-size: 1em;
 }
