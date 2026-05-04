@@ -8,185 +8,1005 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-83DD3MG3CN');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Rajshree Sweets | Authentic Indian Taste</title>
+    <meta name="theme-color" content="#21130f">
+    <meta name="description" content="Quick links, ordering, and review helper for New Rajshree Sweets.">
+    <title>New Rajshree Sweets | Quick Links</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="icon" type="image" href="https://assets.newrajshreesweets.com/icon.webp" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/webp" href="https://assets.newrajshreesweets.com/icon.webp">
 </head>
 
 <body>
-    <div class="complete-body">
-        <div class="header">
-            <img src="https://assets.newrajshreesweets.com/icon.webp" alt="New Rajshree Sweets" class="profile-image">
-            <h1>New Rajshree Sweets</h1>
-            <p class="tagline">Experience the taste of tradition with every bite!</p>
-        </div>
+    <main class="shell">
+        <section class="hero" aria-labelledby="page-title">
+            <div class="brand-orbit">
+                <img src="https://assets.newrajshreesweets.com/icon.webp" alt="New Rajshree Sweets logo"
+                    class="brand-mark" width="108" height="108">
+            </div>
+            <div class="hero-copy">
+                <p class="eyebrow">Authentic sweets from Varanasi</p>
+                <h1 id="page-title">New Rajshree Sweets</h1>
+                <p class="tagline">A refined quick-link experience for ordering, connecting, and sharing a thoughtful
+                    review in seconds.</p>
+            </div>
+        </section>
 
-        <div class="card menu-section" onclick="toggleDialog('menuDialog')">
-            <i class="fas fa-book-open"></i>
-            <h2 class="section-title">Our Delightful Menu</h2>
-        </div>
+        <section class="accordion-stack" aria-label="New Rajshree Sweets actions">
+            <details class="lux-panel" id="reviewPanel">
+                <summary>
+                    <span class="summary-kicker">Review helper</span>
+                    <span class="summary-title">Create a ready-to-post review</span>
+                    <span class="summary-note">Answer 4 quick prompts, refresh, copy, and post.</span>
+                    <span class="summary-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="panel-body review-layout">
+                    <form class="review-form" id="reviewForm">
+                        <fieldset class="question">
+                            <legend>How was the taste?</legend>
+                            <div class="segmented" role="radiogroup" aria-label="Taste rating">
+                                <label><input type="radio" name="taste" value="agree" checked><span>Agree</span></label>
+                                <label><input type="radio" name="taste" value="neutral"><span>Neutral</span></label>
+                                <label><input type="radio" name="taste" value="better"><span>Could be better</span></label>
+                            </div>
+                        </fieldset>
 
-        <div class="card order-section" onclick="toggleDialog('orderDialog')">
-            <i class="fas fa-shopping-bag"></i>
-            <h2 class="section-title">Order Online</h2>
-        </div>
+                        <fieldset class="question">
+                            <legend>Were the sweets fresh?</legend>
+                            <div class="segmented" role="radiogroup" aria-label="Freshness rating">
+                                <label><input type="radio" name="freshness" value="agree" checked><span>Agree</span></label>
+                                <label><input type="radio" name="freshness" value="neutral"><span>Neutral</span></label>
+                                <label><input type="radio" name="freshness" value="better"><span>Could be better</span></label>
+                            </div>
+                        </fieldset>
 
-        <div class="card social-links" onclick="toggleDialog('socialDialog')">
-            <i class="fas fa-share-nodes"></i>
-            <h2 class="section-title">Stay Connected</h2>
-        </div>
+                        <fieldset class="question">
+                            <legend>Was the service helpful?</legend>
+                            <div class="segmented" role="radiogroup" aria-label="Service rating">
+                                <label><input type="radio" name="service" value="agree" checked><span>Agree</span></label>
+                                <label><input type="radio" name="service" value="neutral"><span>Neutral</span></label>
+                                <label><input type="radio" name="service" value="better"><span>Could be better</span></label>
+                            </div>
+                        </fieldset>
 
-        <div class="card contact-section" onclick="toggleDialog('contactDialog')">
-            <i class="fas fa-phone"></i>
-            <h2 class="section-title">Contact Us</h2>
-        </div>
+                        <fieldset class="question">
+                            <legend>Was ordering convenient?</legend>
+                            <div class="segmented" role="radiogroup" aria-label="Ordering rating">
+                                <label><input type="radio" name="ordering" value="agree" checked><span>Agree</span></label>
+                                <label><input type="radio" name="ordering" value="neutral"><span>Neutral</span></label>
+                                <label><input type="radio" name="ordering" value="better"><span>Could be better</span></label>
+                            </div>
+                        </fieldset>
+                    </form>
 
-        <div class="card review-section" onclick="toggleDialog('reviewDialog')">
-            <i class="fas fa-star"></i>
-            <h2 class="section-title">Share Your Sweet Experience</h2>
-        </div>
+                    <div class="generated-review" aria-live="polite">
+                        <label for="reviewText">Generated review</label>
+                        <textarea id="reviewText" rows="5" readonly></textarea>
+                        <div class="review-actions">
+                            <button class="secondary-action" id="refreshReview" type="button">
+                                <svg aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M21 12a9 9 0 0 1-15.3 6.4M3 12a9 9 0 0 1 15.3-6.4" />
+                                    <path d="M18 2v4h-4M6 22v-4h4" />
+                                </svg>
+                                Refresh
+                            </button>
+                            <button class="secondary-action" id="copyReview" type="button">
+                                <svg aria-hidden="true" viewBox="0 0 24 24">
+                                    <rect x="9" y="9" width="11" height="11" rx="2" />
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                </svg>
+                                Copy
+                            </button>
+                        </div>
+                        <p class="copy-status" id="copyStatus" role="status"></p>
+                    </div>
+
+                    <div class="post-actions" aria-label="Post review links">
+                        <a class="primary-action google-action" data-review-link
+                            href="https://g.page/r/Ce2YNkMx7_wQEBE/review" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M21.8 10.2H12v3.9h5.6c-.2 1.3-1 2.4-2.1 3.1v2.6h3.4c2-1.8 3.1-4.5 3.1-7.6 0-.7-.1-1.3-.2-2Z" />
+                                <path d="M12 22c2.8 0 5.1-.9 6.8-2.5l-3.4-2.6c-.9.6-2.1 1-3.5 1-2.7 0-5-1.8-5.8-4.3H2.7v2.7A10 10 0 0 0 12 22Z" />
+                                <path d="M6.2 13.6a6 6 0 0 1 0-3.2V7.7H2.7a10 10 0 0 0 0 8.6l3.5-2.7Z" />
+                                <path d="M12 6.1c1.5 0 2.9.5 4 1.6l3-3A10 10 0 0 0 2.7 7.7l3.5 2.7C7 7.9 9.3 6.1 12 6.1Z" />
+                            </svg>
+                            Post on Google
+                        </a>
+                        <a class="primary-action justdial-action" data-review-link
+                            href="https://jsdl.in/DT-60YE6YAEU2E" target="_blank" rel="noopener noreferrer">
+                            <svg aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M4 4h16v16H4z" />
+                                <path d="M8 15.5c1.1.8 2.4 1.2 4 1.2 2.6 0 4-1.3 4-3.4V7.5" />
+                            </svg>
+                            Post on Justdial
+                        </a>
+                    </div>
+                </div>
+            </details>
+
+            <details class="lux-panel">
+                <summary>
+                    <span class="summary-kicker">Order</span>
+                    <span class="summary-title">Menu and delivery links</span>
+                    <span class="summary-note">Open the menu, website, Zomato, or Swiggy.</span>
+                    <span class="summary-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="panel-body link-grid">
+                <a class="link-card" href="https://menu.newrajshreesweets.com" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="link-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M4 19.5V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-1.5Z" />
+                            <path d="M8 7h6M8 11h6M8 15h4" />
+                        </svg>
+                    </span>
+                    <span><strong>Menu</strong><small>Browse sweets and snacks</small></span>
+                </a>
+                <a class="link-card" href="https://newrajshreesweets.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="link-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M3 10.5 12 3l9 7.5" />
+                            <path d="M5 10v10h14V10" />
+                        </svg>
+                    </span>
+                    <span><strong>Website</strong><small>Order directly online</small></span>
+                </a>
+                <a class="link-card" href="https://zomato.onelink.me/xqzv/pnpchvt9" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="link-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M6 8h12l-1 12H7L6 8Z" />
+                            <path d="M9 8a3 3 0 0 1 6 0" />
+                        </svg>
+                    </span>
+                    <span><strong>Zomato</strong><small>Delivery through Zomato</small></span>
+                </a>
+                <a class="link-card" href="https://www.swiggy.com/menu/979485?source=sharing" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="link-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M12 3c4.2 0 7 2.4 7 6.2 0 5-7 11.8-7 11.8S5 14.2 5 9.2C5 5.4 7.8 3 12 3Z" />
+                            <path d="M9.5 8.5h5" />
+                        </svg>
+                    </span>
+                    <span><strong>Swiggy</strong><small>Delivery through Swiggy</small></span>
+                </a>
+                </div>
+            </details>
+
+            <details class="lux-panel">
+                <summary>
+                    <span class="summary-kicker">Connect</span>
+                    <span class="summary-title">Contact and social links</span>
+                    <span class="summary-note">Call, WhatsApp, or follow New Rajshree Sweets.</span>
+                    <span class="summary-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="panel-body link-grid">
+                    <a class="link-card" href="tel:+919792677770">
+                    <span class="link-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z" />
+                        </svg>
+                    </span>
+                    <span><strong>Call</strong><small>+91 97926 77770</small></span>
+                </a>
+                <a class="link-card" href="https://wa.me/919792677770" target="_blank" rel="noopener noreferrer">
+                    <span class="link-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M4 20l1.2-4A8 8 0 1 1 8 18.8L4 20Z" />
+                            <path d="M9 8.5c.5 2.5 2 4 4.5 4.5" />
+                        </svg>
+                    </span>
+                    <span><strong>WhatsApp</strong><small>Chat for orders</small></span>
+                </a>
+                <a class="link-card" href="https://www.instagram.com/new.rajshreesweets/" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="link-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="18" height="18" rx="5" />
+                            <circle cx="12" cy="12" r="3.5" />
+                            <path d="M17.5 6.5h.01" />
+                        </svg>
+                    </span>
+                    <span><strong>Instagram</strong><small>Follow latest updates</small></span>
+                </a>
+                <a class="link-card" href="https://www.facebook.com/profile.php?id=61560995317454" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="link-icon">
+                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M14 8h3V4h-3a5 5 0 0 0-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9a1 1 0 0 1 1-1Z" />
+                        </svg>
+                    </span>
+                    <span><strong>Facebook</strong><small>Stay connected</small></span>
+                </a>
+                </div>
+            </details>
+        </section>
 
         <a href="https://kesharipiyush24.github.io/" target="_blank" rel="noopener noreferrer" class="developer-link">
-            <div class="developer-badge">
-                <i class="fas fa-code"></i>
-                <div class="developer-info">
-                    <p>Website and Kiosk Designed & Developed by</p>
-                    <span class="developer-name">Piyush Keshari</span>
-                </div>
-                <i class="fas fa-arrow-right"></i>
-            </div>
+            <span>Website and Kiosk Designed & Developed by</span>
+            <strong>Piyush Keshari</strong>
         </a>
-
-        <dialog id="menuDialog" class="modal">
-            <div class="modal-content">
-                <h2>Our Delightful Menu</h2>
-                <p>Discover our wide array of mouthwatering sweets and delicacies:</p>
-                <div class="icons">
-                    <a href="https://menu.newrajshreesweets.com" class="button menu-button" target="_blank"
-                        rel="noopener noreferrer">
-                        Explore Menu
-                    </a>
-                </div>
-            </div>
-        </dialog>
-
-        <dialog id="orderDialog" class="modal">
-            <div class="modal-content">
-                <h2>Order Online</h2>
-                <p>Savor our sweets from the comfort of your home:</p>
-                <div class="icons">
-                    <a href="https://newrajshreesweets.com/" class="button website" target="_blank"
-                        rel="noopener noreferrer">
-                        Our Website
-                    </a>
-                    <a href="https://zomato.onelink.me/xqzv/pnpchvt9" class="button zomato" target="_blank"
-                        rel="noopener noreferrer">
-                        Zomato
-                    </a>
-                    <a href="https://www.swiggy.com/menu/979485?source=sharing" class="button swiggy" target="_blank"
-                        rel="noopener noreferrer">
-                        Swiggy
-                    </a>
-                </div>
-            </div>
-        </dialog>
-
-        <dialog id="socialDialog" class="modal">
-            <div class="modal-content">
-                <h2>Stay Connected</h2>
-                <p>Join our sweet community for updates and special offers:</p>
-                <div class="icons">
-                    <a href="https://wa.me/919792677770?text=Hello%2C%20I'm%20interested%20in%20your%20services.%20Can%20you%20provide%20more%20information%3F"
-                        class="button whatsapp" target="_blank" rel="noopener noreferrer">
-                        WhatsApp
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=61560995317454" class="button facebook"
-                        target="_blank" rel="noopener noreferrer">
-                        Facebook
-                    </a>
-                    <a href="https://www.instagram.com/new.rajshreesweets/" class="button instagram" target="_blank"
-                        rel="noopener noreferrer">
-                        Instagram
-                    </a>
-                    <a href="https://x.com/newrajshree_vns" class="button x" target="_blank" rel="noopener noreferrer">
-                        X
-                    </a>
-                </div>
-            </div>
-        </dialog>
-
-        <dialog id="contactDialog" class="modal">
-            <div class="modal-content">
-                <h2>Contact Us</h2>
-                <p>Get in touch with us for orders and inquiries:</p>
-                <div class="icons">
-                    <a href="tel:+919792677770" class="button phone" target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-phone"></i> +91 97926 77770
-                    </a>
-                    <a href="https://wa.me/919792677770?text=Hello%2C%20I'm%20interested%20in%20your%20services.%20Can%20you%20provide%20more%20information%3F"
-                        class="button whatsapp" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                </div>
-            </div>
-        </dialog>
-
-        <dialog id="reviewDialog" class="modal">
-            <div class="modal-content">
-                <h2>Share Your Sweet Experience</h2>
-                <p>Your feedback helps us serve you better. Please leave us a review:</p>
-                <div class="icons">
-                    <a class="button google" href="https://g.page/r/Ce2YNkMx7_wQEBE/review" target="_blank"
-                        rel="noopener noreferrer">Google</a>
-                    <a class="button justdial" href="https://jsdl.in/DT-60YE6YAEU2E" target="_blank"
-                        rel="noopener noreferrer">Justdial</a>
-                </div>
-            </div>
-        </dialog>
-    </div>
+    </main>
 
     <script>
-        function toggleDialog(dialogId) {
-            const dialog = document.getElementById(dialogId);
+        const reviewPools = {
+                  "agree": [
+                            "New Rajshree Sweets is my go-to place for fresh and delicious sweets. The taste feels authentic, the service is warm, and every visit feels worth it.",
+                            "Loved the sweets from New Rajshree Sweets. Everything tasted fresh, rich, and perfectly balanced. The team was polite and the overall experience was excellent.",
+                            "A wonderful place for traditional sweets. The freshness, flavour, and presentation were all impressive, and I would happily recommend New Rajshree Sweets.",
+                            "The sweets were delicious and fresh, with that proper traditional taste. New Rajshree Sweets always makes celebrations feel more special.",
+                            "Great taste, good quality, and friendly service. I really enjoyed my experience with New Rajshree Sweets and will definitely visit again.",
+                            "New Rajshree Sweets serves some of the best sweets I have tried. The quality is consistent, the flavours are rich, and the staff is helpful.",
+                            "Excellent sweets with authentic flavour and a fresh feel. The service was smooth, and the whole experience was very satisfying.",
+                            "The taste was amazing and the sweets felt freshly prepared. New Rajshree Sweets is a reliable place for family treats and festive orders.",
+                            "Really happy with the quality and service. The sweets were fresh, beautifully made, and full of flavour.",
+                            "A lovely experience from start to finish. The sweets tasted fresh, the staff was courteous, and the quality was exactly what I expected.",
+                            "New Rajshree Sweets has a great range and everything I tried tasted delicious. Freshness and flavour were both excellent.",
+                            "The sweets were rich, fresh, and made with care. I liked the service as well and would recommend this place to anyone who loves Indian sweets.",
+                            "Very tasty sweets and a smooth ordering experience. New Rajshree Sweets continues to maintain good quality and authentic flavours.",
+                            "I had a great experience here. The sweets were fresh, the taste was memorable, and the service was quick and polite.",
+                            "Perfect place for delicious sweets and snacks. The flavours were balanced, the quality was high, and the staff was welcoming.",
+                            "New Rajshree Sweets never disappoints. The taste, freshness, and service all came together beautifully.",
+                            "Amazing quality and authentic taste. The sweets were packed well, served fresh, and enjoyed by everyone.",
+                            "A dependable place for fresh Indian sweets. The flavours were excellent and the overall experience was pleasant.",
+                            "Everything tasted fresh and delicious. I especially liked the quality and care in the sweets from New Rajshree Sweets.",
+                            "Great experience with New Rajshree Sweets. The sweets were flavourful, fresh, and perfect for sharing with family.",
+                            "The quality was impressive and the taste felt very authentic. I would happily order again from New Rajshree Sweets.",
+                            "Fresh sweets, good service, and a lovely traditional taste. New Rajshree Sweets is definitely worth visiting.",
+                            "I enjoyed the sweets a lot. They were fresh, rich, and prepared beautifully. The service was also very nice.",
+                            "New Rajshree Sweets offers excellent flavour and consistent quality. A very good choice for sweets and snacks.",
+                            "The sweets were delicious and fresh, and the whole experience felt easy and comfortable. Highly recommended.",
+                            "A great place for authentic sweets. The taste was balanced, freshness was clear, and service was friendly.",
+                            "Really nice experience. The sweets had rich flavour, good texture, and a fresh taste that stood out.",
+                            "New Rajshree Sweets made our order feel special. The sweets were fresh, tasty, and appreciated by everyone.",
+                            "Very good sweets with a proper traditional touch. The service was polite and the quality was excellent.",
+                            "I liked the freshness and variety. Everything tasted delicious and the experience was smooth.",
+                            "The sweets were beautifully made and full of flavour. New Rajshree Sweets is a place I would trust for special occasions.",
+                            "Excellent experience overall. The taste, quality, and service were all very good.",
+                            "New Rajshree Sweets has a warm, reliable feel. The sweets were fresh, tasty, and served with care.",
+                            "The flavour was authentic and the quality felt premium. I really enjoyed ordering from New Rajshree Sweets.",
+                            "A satisfying experience with fresh sweets and helpful service. I will gladly recommend this place.",
+                            "The sweets were mouthwatering and fresh. New Rajshree Sweets delivers the kind of quality that makes you come back.",
+                            "Loved the taste and freshness. The service was quick and the sweets were perfect for the occasion.",
+                            "Good variety, great flavour, and fresh preparation. New Rajshree Sweets is a strong choice for sweets in Varanasi.",
+                            "The sweets tasted wonderful and the staff was helpful. The quality and freshness were both very good.",
+                            "A very pleasant experience. The sweets were rich, fresh, and full of traditional flavour.",
+                            "New Rajshree Sweets has excellent quality and a welcoming service style. I enjoyed every item I tried.",
+                            "The taste was classic and comforting. Fresh sweets, good service, and a happy overall experience.",
+                            "Really impressed by the freshness and flavour. New Rajshree Sweets is perfect for family orders and festive treats.",
+                            "The sweets were prepared well, tasted fresh, and had a lovely authentic touch. I would order again.",
+                            "Great sweets and a very smooth experience. The taste was rich without being too heavy.",
+                            "New Rajshree Sweets gave us fresh, delicious sweets and very polite service. Fully satisfied.",
+                            "The quality was consistent and the taste was excellent. A reliable sweet shop for every occasion.",
+                            "Everything was fresh, flavourful, and nicely packed. New Rajshree Sweets made the order feel special.",
+                            "A delightful place for traditional sweets. The taste, freshness, and service were all excellent.",
+                            "I had a very good experience with New Rajshree Sweets. The sweets were fresh, tasty, and worth recommending.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. I would happily recommend them for celebrations and everyday cravings.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. It is the kind of place I would gladly visit again.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. The quality made the whole experience feel premium and satisfying.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. It is a reliable spot for anyone who enjoys Indian sweets.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. Everything felt thoughtfully prepared and worth sharing with family.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. The freshness and service made the experience stand out.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. I will definitely keep them in mind for future orders.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. A very satisfying choice for sweets, snacks, and festive gifting.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. The taste stayed with me in the best way.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. It felt perfect for both gifting and enjoying at home.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. The service and flavour both left a very good impression.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. This is exactly the kind of quality I look for in a sweet shop.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. The overall experience was smooth, tasty, and welcoming.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. Everyone enjoyed the sweets and appreciated the freshness.",
+                            "New Rajshree Sweets was a delightful experience, with fresh preparation, rich flavour, and a genuine traditional touch. The traditional flavour and care in preparation really showed.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. I would happily recommend them for celebrations and everyday cravings.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. It is the kind of place I would gladly visit again.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. The quality made the whole experience feel premium and satisfying.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. It is a reliable spot for anyone who enjoys Indian sweets.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. Everything felt thoughtfully prepared and worth sharing with family.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. The freshness and service made the experience stand out.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. I will definitely keep them in mind for future orders.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. A very satisfying choice for sweets, snacks, and festive gifting.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. The taste stayed with me in the best way.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. It felt perfect for both gifting and enjoying at home.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. The service and flavour both left a very good impression.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. This is exactly the kind of quality I look for in a sweet shop.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. The overall experience was smooth, tasty, and welcoming.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. Everyone enjoyed the sweets and appreciated the freshness.",
+                            "New Rajshree Sweets was a delightful experience, with balanced sweetness, neat presentation, and warm service. The traditional flavour and care in preparation really showed.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. I would happily recommend them for celebrations and everyday cravings.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. It is the kind of place I would gladly visit again.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. The quality made the whole experience feel premium and satisfying.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. It is a reliable spot for anyone who enjoys Indian sweets.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. Everything felt thoughtfully prepared and worth sharing with family.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. The freshness and service made the experience stand out.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. I will definitely keep them in mind for future orders.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. A very satisfying choice for sweets, snacks, and festive gifting.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. The taste stayed with me in the best way.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. It felt perfect for both gifting and enjoying at home.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. The service and flavour both left a very good impression.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. This is exactly the kind of quality I look for in a sweet shop.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. The overall experience was smooth, tasty, and welcoming.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. Everyone enjoyed the sweets and appreciated the freshness.",
+                            "New Rajshree Sweets was a delightful experience, with delicious sweets, helpful staff, and dependable quality. The traditional flavour and care in preparation really showed.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. I would happily recommend them for celebrations and everyday cravings.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. It is the kind of place I would gladly visit again.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. The quality made the whole experience feel premium and satisfying.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. It is a reliable spot for anyone who enjoys Indian sweets.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. Everything felt thoughtfully prepared and worth sharing with family.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. The freshness and service made the experience stand out.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. I will definitely keep them in mind for future orders.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. A very satisfying choice for sweets, snacks, and festive gifting.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. The taste stayed with me in the best way.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. It felt perfect for both gifting and enjoying at home.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. The service and flavour both left a very good impression.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. This is exactly the kind of quality I look for in a sweet shop.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. The overall experience was smooth, tasty, and welcoming.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. Everyone enjoyed the sweets and appreciated the freshness.",
+                            "New Rajshree Sweets was a delightful experience, with authentic flavours, lovely texture, and careful packing. The traditional flavour and care in preparation really showed.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. I would happily recommend them for celebrations and everyday cravings.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. It is the kind of place I would gladly visit again.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. The quality made the whole experience feel premium and satisfying.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. It is a reliable spot for anyone who enjoys Indian sweets.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. Everything felt thoughtfully prepared and worth sharing with family.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. The freshness and service made the experience stand out.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. I will definitely keep them in mind for future orders.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. A very satisfying choice for sweets, snacks, and festive gifting.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. The taste stayed with me in the best way.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. It felt perfect for both gifting and enjoying at home.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. The service and flavour both left a very good impression.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. This is exactly the kind of quality I look for in a sweet shop.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. The overall experience was smooth, tasty, and welcoming.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. Everyone enjoyed the sweets and appreciated the freshness.",
+                            "New Rajshree Sweets was a delightful experience, with fresh taste, generous variety, and a welcoming feel. The traditional flavour and care in preparation really showed.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. I would happily recommend them for celebrations and everyday cravings.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. It is the kind of place I would gladly visit again.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. The quality made the whole experience feel premium and satisfying.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. It is a reliable spot for anyone who enjoys Indian sweets.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. Everything felt thoughtfully prepared and worth sharing with family.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. The freshness and service made the experience stand out.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. I will definitely keep them in mind for future orders.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. A very satisfying choice for sweets, snacks, and festive gifting.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. The taste stayed with me in the best way.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. It felt perfect for both gifting and enjoying at home.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. The service and flavour both left a very good impression.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. This is exactly the kind of quality I look for in a sweet shop.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. The overall experience was smooth, tasty, and welcoming.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. Everyone enjoyed the sweets and appreciated the freshness.",
+                            "I loved my visit to New Rajshree Sweets, with fresh preparation, rich flavour, and a genuine traditional touch. The traditional flavour and care in preparation really showed.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. I would happily recommend them for celebrations and everyday cravings.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. It is the kind of place I would gladly visit again.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. The quality made the whole experience feel premium and satisfying.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. It is a reliable spot for anyone who enjoys Indian sweets.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. Everything felt thoughtfully prepared and worth sharing with family.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. The freshness and service made the experience stand out.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. I will definitely keep them in mind for future orders.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. A very satisfying choice for sweets, snacks, and festive gifting.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. The taste stayed with me in the best way.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. It felt perfect for both gifting and enjoying at home.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. The service and flavour both left a very good impression.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. This is exactly the kind of quality I look for in a sweet shop.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. The overall experience was smooth, tasty, and welcoming.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. Everyone enjoyed the sweets and appreciated the freshness.",
+                            "I loved my visit to New Rajshree Sweets, with balanced sweetness, neat presentation, and warm service. The traditional flavour and care in preparation really showed.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. I would happily recommend them for celebrations and everyday cravings.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. It is the kind of place I would gladly visit again.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. The quality made the whole experience feel premium and satisfying.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. It is a reliable spot for anyone who enjoys Indian sweets.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. Everything felt thoughtfully prepared and worth sharing with family.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. The freshness and service made the experience stand out.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. I will definitely keep them in mind for future orders.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. A very satisfying choice for sweets, snacks, and festive gifting.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. The taste stayed with me in the best way.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. It felt perfect for both gifting and enjoying at home.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. The service and flavour both left a very good impression.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. This is exactly the kind of quality I look for in a sweet shop.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. The overall experience was smooth, tasty, and welcoming.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. Everyone enjoyed the sweets and appreciated the freshness.",
+                            "I loved my visit to New Rajshree Sweets, with delicious sweets, helpful staff, and dependable quality. The traditional flavour and care in preparation really showed.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. I would happily recommend them for celebrations and everyday cravings.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. It is the kind of place I would gladly visit again.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. The quality made the whole experience feel premium and satisfying.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. It is a reliable spot for anyone who enjoys Indian sweets.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. Everything felt thoughtfully prepared and worth sharing with family.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. The freshness and service made the experience stand out.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. I will definitely keep them in mind for future orders.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. A very satisfying choice for sweets, snacks, and festive gifting.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. The taste stayed with me in the best way.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. It felt perfect for both gifting and enjoying at home.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. The service and flavour both left a very good impression.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. This is exactly the kind of quality I look for in a sweet shop.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. The overall experience was smooth, tasty, and welcoming.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. Everyone enjoyed the sweets and appreciated the freshness.",
+                            "I loved my visit to New Rajshree Sweets, with authentic flavours, lovely texture, and careful packing. The traditional flavour and care in preparation really showed.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. I would happily recommend them for celebrations and everyday cravings.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. It is the kind of place I would gladly visit again.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. The quality made the whole experience feel premium and satisfying.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. It is a reliable spot for anyone who enjoys Indian sweets.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. Everything felt thoughtfully prepared and worth sharing with family.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. The freshness and service made the experience stand out.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. I will definitely keep them in mind for future orders.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. A very satisfying choice for sweets, snacks, and festive gifting.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. The taste stayed with me in the best way.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. It felt perfect for both gifting and enjoying at home.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. The service and flavour both left a very good impression.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. This is exactly the kind of quality I look for in a sweet shop.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. The overall experience was smooth, tasty, and welcoming.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. Everyone enjoyed the sweets and appreciated the freshness.",
+                            "I loved my visit to New Rajshree Sweets, with fresh taste, generous variety, and a welcoming feel. The traditional flavour and care in preparation really showed."
+                  ],
+                  "neutral": [
+                            "New Rajshree Sweets was a pleasant experience. The sweets had a nice traditional taste, and I liked the freshness and service.",
+                            "I enjoyed my order from New Rajshree Sweets. The flavours were good, the sweets felt fresh, and the overall experience was comfortable.",
+                            "A good place for Indian sweets. The taste was nice, the service was polite, and I would like to try more items next time.",
+                            "The sweets were fresh and enjoyable. New Rajshree Sweets has a good traditional feel and a friendly team.",
+                            "Nice experience overall. The sweets tasted good, the quality felt reliable, and the service was smooth.",
+                            "New Rajshree Sweets offers a good selection of sweets with pleasant flavours and fresh preparation.",
+                            "I liked the sweets and the service. The experience was simple, positive, and worth repeating.",
+                            "The taste was good and the sweets were fresh. New Rajshree Sweets is a nice option for family treats.",
+                            "Good sweets with a homely traditional flavour. The staff was helpful and the experience was positive.",
+                            "My experience was nice. The sweets were fresh, the taste was enjoyable, and the ordering felt convenient.",
+                            "New Rajshree Sweets has good quality and a welcoming feel. I enjoyed the items I tried.",
+                            "The sweets tasted nice and fresh. A pleasant place for traditional sweets and snacks.",
+                            "I had a good experience here. The service was polite and the sweets were tasty.",
+                            "The sweets were enjoyable and the freshness was good. New Rajshree Sweets is worth trying.",
+                            "Good taste, decent variety, and courteous service. I would be happy to visit again.",
+                            "New Rajshree Sweets gave a positive experience with fresh sweets and helpful service.",
+                            "The sweets were nice and had a traditional touch. Overall, a good experience.",
+                            "A pleasant shop for sweets. The quality was good and the staff was friendly.",
+                            "I liked the freshness and flavour. New Rajshree Sweets has a good local charm.",
+                            "The order was smooth and the sweets tasted good. A nice option for sweet cravings.",
+                            "Fresh sweets and polite service made the experience enjoyable. I would recommend giving them a try.",
+                            "New Rajshree Sweets has a comfortable, familiar taste. The sweets were fresh and enjoyable.",
+                            "A nice experience with good sweets and a simple ordering process.",
+                            "The flavours were pleasant and the sweets felt fresh. Good overall service too.",
+                            "I enjoyed the sweets from New Rajshree Sweets. The quality and freshness were both nice.",
+                            "Good place for traditional sweets. The taste was enjoyable and the staff was helpful.",
+                            "The sweets were tasty and the experience was smooth. I liked the freshness.",
+                            "New Rajshree Sweets is a nice choice for sweets and snacks. The service was polite.",
+                            "The quality was good and the sweets tasted fresh. A positive experience overall.",
+                            "I had a pleasant visit. The sweets were fresh and the service was warm.",
+                            "The taste was nice and the sweets had a traditional feel. I would visit again.",
+                            "Good sweets, clean flavours, and friendly service. New Rajshree Sweets is worth trying.",
+                            "The sweets were enjoyable and nicely prepared. The overall experience was good.",
+                            "A positive experience with fresh sweets and comfortable service.",
+                            "New Rajshree Sweets served tasty sweets with good freshness and polite service.",
+                            "The sweets had nice flavour and the ordering experience was easy.",
+                            "I liked the taste and variety. The service was helpful and the sweets were fresh.",
+                            "A good place for everyday sweets and special occasion orders.",
+                            "The experience was pleasant. Fresh sweets, nice taste, and friendly staff.",
+                            "New Rajshree Sweets has good traditional flavours and a simple, reliable service experience.",
+                            "The sweets were fresh and tasty. I had a nice overall experience.",
+                            "Nice sweets with good flavour and presentation. The staff was courteous.",
+                            "The quality felt good and the sweets were enjoyable. I would try more items next time.",
+                            "New Rajshree Sweets is a pleasant choice for fresh sweets and snacks.",
+                            "Good flavours and nice service. The sweets were fresh and satisfying.",
+                            "I liked the freshness and taste. The experience was smooth and positive.",
+                            "The sweets were good and the service was kind. A nice place to order from.",
+                            "Fresh, tasty sweets with a friendly experience. New Rajshree Sweets is worth visiting.",
+                            "The order was convenient and the sweets tasted nice. Overall, a happy experience.",
+                            "A nice local sweet shop with fresh items, good taste, and helpful service.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. I would be happy to try more items next time.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. It is a nice option for family orders and small celebrations.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. The experience was positive and worth recommending.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. I appreciated the freshness and the traditional flavour.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. It is a good place to keep in mind for sweet cravings.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. The team was courteous and the sweets were enjoyable.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. Overall, it felt like a good local sweet shop.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. I would visit again when I want fresh Indian sweets.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. The taste and service made the visit worthwhile.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. It was a simple, pleasant, and satisfying experience.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. The quality felt dependable and the flavours were nice.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. It is worth trying for anyone who enjoys traditional sweets.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. The order felt convenient and the sweets were fresh.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. I liked the balance of taste, freshness, and service.",
+                            "New Rajshree Sweets gave me a pleasant experience, with fresh sweets, polite service, and a familiar traditional taste. The whole experience was calm, friendly, and positive.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. I would be happy to try more items next time.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. It is a nice option for family orders and small celebrations.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. The experience was positive and worth recommending.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. I appreciated the freshness and the traditional flavour.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. It is a good place to keep in mind for sweet cravings.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. The team was courteous and the sweets were enjoyable.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. Overall, it felt like a good local sweet shop.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. I would visit again when I want fresh Indian sweets.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. The taste and service made the visit worthwhile.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. It was a simple, pleasant, and satisfying experience.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. The quality felt dependable and the flavours were nice.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. It is worth trying for anyone who enjoys traditional sweets.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. The order felt convenient and the sweets were fresh.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. I liked the balance of taste, freshness, and service.",
+                            "New Rajshree Sweets gave me a pleasant experience, with good flavour, clean presentation, and helpful staff. The whole experience was calm, friendly, and positive.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. I would be happy to try more items next time.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. It is a nice option for family orders and small celebrations.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. The experience was positive and worth recommending.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. I appreciated the freshness and the traditional flavour.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. It is a good place to keep in mind for sweet cravings.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. The team was courteous and the sweets were enjoyable.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. Overall, it felt like a good local sweet shop.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. I would visit again when I want fresh Indian sweets.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. The taste and service made the visit worthwhile.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. It was a simple, pleasant, and satisfying experience.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. The quality felt dependable and the flavours were nice.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. It is worth trying for anyone who enjoys traditional sweets.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. The order felt convenient and the sweets were fresh.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. I liked the balance of taste, freshness, and service.",
+                            "New Rajshree Sweets gave me a pleasant experience, with enjoyable items, nice freshness, and an easy ordering experience. The whole experience was calm, friendly, and positive.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. I would be happy to try more items next time.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. It is a nice option for family orders and small celebrations.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. The experience was positive and worth recommending.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. I appreciated the freshness and the traditional flavour.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. It is a good place to keep in mind for sweet cravings.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. The team was courteous and the sweets were enjoyable.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. Overall, it felt like a good local sweet shop.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. I would visit again when I want fresh Indian sweets.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. The taste and service made the visit worthwhile.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. It was a simple, pleasant, and satisfying experience.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. The quality felt dependable and the flavours were nice.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. It is worth trying for anyone who enjoys traditional sweets.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. The order felt convenient and the sweets were fresh.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. I liked the balance of taste, freshness, and service.",
+                            "New Rajshree Sweets gave me a pleasant experience, with pleasant sweetness, good quality, and a welcoming atmosphere. The whole experience was calm, friendly, and positive.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. I would be happy to try more items next time.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. It is a nice option for family orders and small celebrations.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. The experience was positive and worth recommending.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. I appreciated the freshness and the traditional flavour.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. It is a good place to keep in mind for sweet cravings.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. The team was courteous and the sweets were enjoyable.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. Overall, it felt like a good local sweet shop.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. I would visit again when I want fresh Indian sweets.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. The taste and service made the visit worthwhile.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. It was a simple, pleasant, and satisfying experience.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. The quality felt dependable and the flavours were nice.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. It is worth trying for anyone who enjoys traditional sweets.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. The order felt convenient and the sweets were fresh.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. I liked the balance of taste, freshness, and service.",
+                            "New Rajshree Sweets gave me a pleasant experience, with tasty sweets, simple service, and a reliable feel. The whole experience was calm, friendly, and positive.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. I would be happy to try more items next time.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. It is a nice option for family orders and small celebrations.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. The experience was positive and worth recommending.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. I appreciated the freshness and the traditional flavour.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. It is a good place to keep in mind for sweet cravings.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. The team was courteous and the sweets were enjoyable.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. Overall, it felt like a good local sweet shop.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. I would visit again when I want fresh Indian sweets.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. The taste and service made the visit worthwhile.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. It was a simple, pleasant, and satisfying experience.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. The quality felt dependable and the flavours were nice.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. It is worth trying for anyone who enjoys traditional sweets.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. The order felt convenient and the sweets were fresh.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. I liked the balance of taste, freshness, and service.",
+                            "I had a nice experience with New Rajshree Sweets, with fresh sweets, polite service, and a familiar traditional taste. The whole experience was calm, friendly, and positive.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. I would be happy to try more items next time.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. It is a nice option for family orders and small celebrations.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. The experience was positive and worth recommending.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. I appreciated the freshness and the traditional flavour.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. It is a good place to keep in mind for sweet cravings.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. The team was courteous and the sweets were enjoyable.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. Overall, it felt like a good local sweet shop.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. I would visit again when I want fresh Indian sweets.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. The taste and service made the visit worthwhile.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. It was a simple, pleasant, and satisfying experience.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. The quality felt dependable and the flavours were nice.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. It is worth trying for anyone who enjoys traditional sweets.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. The order felt convenient and the sweets were fresh.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. I liked the balance of taste, freshness, and service.",
+                            "I had a nice experience with New Rajshree Sweets, with good flavour, clean presentation, and helpful staff. The whole experience was calm, friendly, and positive.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. I would be happy to try more items next time.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. It is a nice option for family orders and small celebrations.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. The experience was positive and worth recommending.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. I appreciated the freshness and the traditional flavour.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. It is a good place to keep in mind for sweet cravings.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. The team was courteous and the sweets were enjoyable.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. Overall, it felt like a good local sweet shop.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. I would visit again when I want fresh Indian sweets.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. The taste and service made the visit worthwhile.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. It was a simple, pleasant, and satisfying experience.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. The quality felt dependable and the flavours were nice.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. It is worth trying for anyone who enjoys traditional sweets.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. The order felt convenient and the sweets were fresh.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. I liked the balance of taste, freshness, and service.",
+                            "I had a nice experience with New Rajshree Sweets, with enjoyable items, nice freshness, and an easy ordering experience. The whole experience was calm, friendly, and positive.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. I would be happy to try more items next time.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. It is a nice option for family orders and small celebrations.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. The experience was positive and worth recommending.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. I appreciated the freshness and the traditional flavour.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. It is a good place to keep in mind for sweet cravings.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. The team was courteous and the sweets were enjoyable.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. Overall, it felt like a good local sweet shop.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. I would visit again when I want fresh Indian sweets.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. The taste and service made the visit worthwhile.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. It was a simple, pleasant, and satisfying experience.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. The quality felt dependable and the flavours were nice.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. It is worth trying for anyone who enjoys traditional sweets.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. The order felt convenient and the sweets were fresh.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. I liked the balance of taste, freshness, and service.",
+                            "I had a nice experience with New Rajshree Sweets, with pleasant sweetness, good quality, and a welcoming atmosphere. The whole experience was calm, friendly, and positive.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. I would be happy to try more items next time.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. It is a nice option for family orders and small celebrations.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. The experience was positive and worth recommending.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. I appreciated the freshness and the traditional flavour.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. It is a good place to keep in mind for sweet cravings.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. The team was courteous and the sweets were enjoyable.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. Overall, it felt like a good local sweet shop.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. I would visit again when I want fresh Indian sweets.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. The taste and service made the visit worthwhile.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. It was a simple, pleasant, and satisfying experience.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. The quality felt dependable and the flavours were nice.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. It is worth trying for anyone who enjoys traditional sweets.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. The order felt convenient and the sweets were fresh.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. I liked the balance of taste, freshness, and service.",
+                            "I had a nice experience with New Rajshree Sweets, with tasty sweets, simple service, and a reliable feel. The whole experience was calm, friendly, and positive."
+                  ],
+                  "better": [
+                            "New Rajshree Sweets has a lovely traditional taste, and I appreciate the freshness and effort in their sweets.",
+                            "I liked the sweets from New Rajshree Sweets. The flavours were warm, fresh, and made the experience pleasant.",
+                            "A good experience with fresh sweets and polite service. I enjoyed the traditional flavours.",
+                            "The sweets had a nice authentic taste, and the team was helpful throughout the experience.",
+                            "New Rajshree Sweets offers fresh sweets with a familiar and comforting flavour. I enjoyed the visit.",
+                            "I appreciated the quality and freshness. The sweets had a good traditional touch.",
+                            "The experience was positive, with tasty sweets and friendly service from the team.",
+                            "New Rajshree Sweets has a good variety and the items I tried tasted fresh and enjoyable.",
+                            "The sweets were pleasant and had a nice traditional flavour. The service was courteous.",
+                            "I liked the freshness and care in the sweets. New Rajshree Sweets is a nice place to visit.",
+                            "The sweets tasted good and the staff was polite. A pleasant experience overall.",
+                            "Good traditional sweets with a fresh taste. I enjoyed the simplicity and warmth of the place.",
+                            "New Rajshree Sweets gave a nice experience with fresh items and helpful service.",
+                            "The taste was enjoyable and the sweets felt freshly prepared. I would try them again.",
+                            "A positive experience with good sweets and a welcoming team.",
+                            "I liked the authentic flavour and freshness. New Rajshree Sweets has a nice local charm.",
+                            "The sweets were tasty and the service was friendly. A good place for traditional treats.",
+                            "New Rajshree Sweets has enjoyable flavours and a warm service approach.",
+                            "The items tasted fresh and the experience was comfortable. I appreciated the quality.",
+                            "Good sweets with a traditional feel. The team was polite and the overall experience was nice.",
+                            "I enjoyed the sweets and liked the freshness. New Rajshree Sweets is worth trying.",
+                            "The sweets were nicely prepared and had a pleasant flavour. A good experience overall.",
+                            "New Rajshree Sweets serves fresh sweets with a comforting traditional taste.",
+                            "The experience was positive. The sweets were tasty and the service was helpful.",
+                            "A nice place for sweets, with fresh preparation and friendly service.",
+                            "I liked the taste and freshness. The sweets felt made with care.",
+                            "New Rajshree Sweets has good flavours and a welcoming feel. I enjoyed my order.",
+                            "The sweets tasted fresh and pleasant. The service was polite and smooth.",
+                            "Good experience with fresh sweets and traditional flavour. I would visit again.",
+                            "The quality was nice and the sweets were enjoyable. New Rajshree Sweets has a warm feel.",
+                            "I appreciated the taste and freshness. The staff was helpful and courteous.",
+                            "The sweets had a pleasant flavour and the experience felt positive.",
+                            "New Rajshree Sweets is a nice option for traditional sweets and snacks.",
+                            "Fresh sweets, polite service, and a good traditional taste made the visit enjoyable.",
+                            "The flavours were good and the sweets felt fresh. Overall, a pleasant experience.",
+                            "I liked the care in preparation and the welcoming service.",
+                            "New Rajshree Sweets offers tasty sweets with a familiar homemade feel.",
+                            "The sweets were fresh and satisfying. The team was friendly and helpful.",
+                            "Good traditional taste and a comfortable experience. I enjoyed the sweets.",
+                            "The items I tried were fresh and flavourful. New Rajshree Sweets is worth a visit.",
+                            "A pleasant experience with good sweets, fresh taste, and polite service.",
+                            "The sweets had a nice flavour and the overall service was warm.",
+                            "New Rajshree Sweets has fresh items and a positive customer experience.",
+                            "I enjoyed the taste and liked the traditional style of the sweets.",
+                            "The sweets were fresh, the staff was courteous, and the experience was good.",
+                            "A good place for sweet cravings, with pleasant taste and helpful service.",
+                            "New Rajshree Sweets has a nice selection and a fresh, traditional flavour.",
+                            "The service was kind and the sweets tasted good. I had a positive experience.",
+                            "Fresh, tasty sweets with a simple and welcoming experience.",
+                            "I liked the flavours and freshness. New Rajshree Sweets is a good choice for traditional sweets.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. I would still recommend them for anyone looking for traditional sweets.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. The freshness and flavour made the experience worthwhile.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. It is a good choice for simple sweet cravings and family treats.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. I liked the effort and would be happy to try more items.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. The service was friendly and the sweets were enjoyable.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. It had a pleasant local feel that I appreciated.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. The taste was comforting and the experience was good overall.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. I would consider ordering again for fresh sweets.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. The quality and service both felt positive.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. It is a nice option when you want familiar Indian flavours.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. The sweets felt fresh and made with care.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. I appreciated the traditional touch in the flavours.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. The overall experience was friendly, fresh, and satisfying.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. It was a pleasant visit with good sweets and helpful service.",
+                            "New Rajshree Sweets has a warm traditional charm, with polite service, fresh preparation, and comforting flavours. The order left a good impression and felt worth trying again.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. I would still recommend them for anyone looking for traditional sweets.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. The freshness and flavour made the experience worthwhile.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. It is a good choice for simple sweet cravings and family treats.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. I liked the effort and would be happy to try more items.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. The service was friendly and the sweets were enjoyable.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. It had a pleasant local feel that I appreciated.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. The taste was comforting and the experience was good overall.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. I would consider ordering again for fresh sweets.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. The quality and service both felt positive.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. It is a nice option when you want familiar Indian flavours.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. The sweets felt fresh and made with care.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. I appreciated the traditional touch in the flavours.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. The overall experience was friendly, fresh, and satisfying.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. It was a pleasant visit with good sweets and helpful service.",
+                            "New Rajshree Sweets has a warm traditional charm, with tasty items, helpful staff, and a welcoming approach. The order left a good impression and felt worth trying again.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. I would still recommend them for anyone looking for traditional sweets.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. The freshness and flavour made the experience worthwhile.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. It is a good choice for simple sweet cravings and family treats.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. I liked the effort and would be happy to try more items.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. The service was friendly and the sweets were enjoyable.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. It had a pleasant local feel that I appreciated.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. The taste was comforting and the experience was good overall.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. I would consider ordering again for fresh sweets.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. The quality and service both felt positive.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. It is a nice option when you want familiar Indian flavours.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. The sweets felt fresh and made with care.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. I appreciated the traditional touch in the flavours.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. The overall experience was friendly, fresh, and satisfying.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. It was a pleasant visit with good sweets and helpful service.",
+                            "New Rajshree Sweets has a warm traditional charm, with good quality, pleasant sweetness, and a familiar local feel. The order left a good impression and felt worth trying again.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. I would still recommend them for anyone looking for traditional sweets.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. The freshness and flavour made the experience worthwhile.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. It is a good choice for simple sweet cravings and family treats.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. I liked the effort and would be happy to try more items.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. The service was friendly and the sweets were enjoyable.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. It had a pleasant local feel that I appreciated.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. The taste was comforting and the experience was good overall.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. I would consider ordering again for fresh sweets.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. The quality and service both felt positive.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. It is a nice option when you want familiar Indian flavours.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. The sweets felt fresh and made with care.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. I appreciated the traditional touch in the flavours.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. The overall experience was friendly, fresh, and satisfying.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. It was a pleasant visit with good sweets and helpful service.",
+                            "New Rajshree Sweets has a warm traditional charm, with nicely prepared sweets, fresh texture, and courteous service. The order left a good impression and felt worth trying again.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. I would still recommend them for anyone looking for traditional sweets.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. The freshness and flavour made the experience worthwhile.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. It is a good choice for simple sweet cravings and family treats.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. I liked the effort and would be happy to try more items.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. The service was friendly and the sweets were enjoyable.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. It had a pleasant local feel that I appreciated.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. The taste was comforting and the experience was good overall.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. I would consider ordering again for fresh sweets.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. The quality and service both felt positive.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. It is a nice option when you want familiar Indian flavours.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. The sweets felt fresh and made with care.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. I appreciated the traditional touch in the flavours.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. The overall experience was friendly, fresh, and satisfying.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. It was a pleasant visit with good sweets and helpful service.",
+                            "New Rajshree Sweets has a warm traditional charm, with enjoyable flavours, careful packing, and a positive experience. The order left a good impression and felt worth trying again.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. I would still recommend them for anyone looking for traditional sweets.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. The freshness and flavour made the experience worthwhile.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. It is a good choice for simple sweet cravings and family treats.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. I liked the effort and would be happy to try more items.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. The service was friendly and the sweets were enjoyable.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. It had a pleasant local feel that I appreciated.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. The taste was comforting and the experience was good overall.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. I would consider ordering again for fresh sweets.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. The quality and service both felt positive.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. It is a nice option when you want familiar Indian flavours.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. The sweets felt fresh and made with care.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. I appreciated the traditional touch in the flavours.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. The overall experience was friendly, fresh, and satisfying.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. It was a pleasant visit with good sweets and helpful service.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with polite service, fresh preparation, and comforting flavours. The order left a good impression and felt worth trying again.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. I would still recommend them for anyone looking for traditional sweets.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. The freshness and flavour made the experience worthwhile.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. It is a good choice for simple sweet cravings and family treats.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. I liked the effort and would be happy to try more items.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. The service was friendly and the sweets were enjoyable.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. It had a pleasant local feel that I appreciated.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. The taste was comforting and the experience was good overall.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. I would consider ordering again for fresh sweets.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. The quality and service both felt positive.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. It is a nice option when you want familiar Indian flavours.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. The sweets felt fresh and made with care.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. I appreciated the traditional touch in the flavours.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. The overall experience was friendly, fresh, and satisfying.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. It was a pleasant visit with good sweets and helpful service.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with tasty items, helpful staff, and a welcoming approach. The order left a good impression and felt worth trying again.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. I would still recommend them for anyone looking for traditional sweets.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. The freshness and flavour made the experience worthwhile.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. It is a good choice for simple sweet cravings and family treats.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. I liked the effort and would be happy to try more items.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. The service was friendly and the sweets were enjoyable.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. It had a pleasant local feel that I appreciated.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. The taste was comforting and the experience was good overall.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. I would consider ordering again for fresh sweets.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. The quality and service both felt positive.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. It is a nice option when you want familiar Indian flavours.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. The sweets felt fresh and made with care.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. I appreciated the traditional touch in the flavours.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. The overall experience was friendly, fresh, and satisfying.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. It was a pleasant visit with good sweets and helpful service.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with good quality, pleasant sweetness, and a familiar local feel. The order left a good impression and felt worth trying again.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. I would still recommend them for anyone looking for traditional sweets.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. The freshness and flavour made the experience worthwhile.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. It is a good choice for simple sweet cravings and family treats.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. I liked the effort and would be happy to try more items.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. The service was friendly and the sweets were enjoyable.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. It had a pleasant local feel that I appreciated.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. The taste was comforting and the experience was good overall.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. I would consider ordering again for fresh sweets.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. The quality and service both felt positive.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. It is a nice option when you want familiar Indian flavours.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. The sweets felt fresh and made with care.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. I appreciated the traditional touch in the flavours.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. The overall experience was friendly, fresh, and satisfying.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. It was a pleasant visit with good sweets and helpful service.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with nicely prepared sweets, fresh texture, and courteous service. The order left a good impression and felt worth trying again.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. I would still recommend them for anyone looking for traditional sweets.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. The freshness and flavour made the experience worthwhile.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. It is a good choice for simple sweet cravings and family treats.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. I liked the effort and would be happy to try more items.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. The service was friendly and the sweets were enjoyable.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. It had a pleasant local feel that I appreciated.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. The taste was comforting and the experience was good overall.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. I would consider ordering again for fresh sweets.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. The quality and service both felt positive.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. It is a nice option when you want familiar Indian flavours.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. The sweets felt fresh and made with care.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. I appreciated the traditional touch in the flavours.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. The overall experience was friendly, fresh, and satisfying.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. It was a pleasant visit with good sweets and helpful service.",
+                            "I enjoyed the fresh taste from New Rajshree Sweets, with enjoyable flavours, careful packing, and a positive experience. The order left a good impression and felt worth trying again."
+                  ]
+        };
 
-            if (dialog.open) {
-                dialog.close();
-            } else {
-                dialog.showModal();
+        const historyByTone = { agree: [], neutral: [], better: [] };
+        const questionNames = ["taste", "freshness", "service", "ordering"];
+        const reviewText = document.getElementById("reviewText");
+        const copyStatus = document.getElementById("copyStatus");
+        const form = document.getElementById("reviewForm");
+        const reviewPanel = document.getElementById("reviewPanel");
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let activeReview = "";
+        let streamFrame = null;
+        let reviewHasOpened = false;
+
+        function getSelectedTone() {
+            const values = questionNames.map((name) => new FormData(form).get(name));
+            const counts = values.reduce((result, value) => {
+                result[value] = (result[value] || 0) + 1;
+                return result;
+            }, {});
+
+            if ((counts.agree || 0) >= 3) return "agree";
+            if ((counts.better || 0) >= 2) return "better";
+            return "neutral";
+        }
+
+        function pickReview(forceNew = false, animate = true) {
+            const tone = getSelectedTone();
+            const pool = reviewPools[tone];
+            const recent = historyByTone[tone];
+            const available = pool
+                .map((review, index) => ({ review, index }))
+                .filter((item) => !recent.includes(item.index) || recent.length > 18);
+            const candidates = available.length ? available : pool.map((review, index) => ({ review, index }));
+            let selected = candidates[Math.floor(cryptoRandom() * candidates.length)];
+
+            if (forceNew && selected.review === activeReview && candidates.length > 1) {
+                selected = candidates[(candidates.indexOf(selected) + 1) % candidates.length];
+            }
+
+            recent.push(selected.index);
+            if (recent.length > 18) recent.shift();
+            copyStatus.textContent = "";
+            streamReview(selected.review, animate);
+        }
+
+        function cryptoRandom() {
+            if (!window.crypto || !window.crypto.getRandomValues) return Math.random();
+            const value = new Uint32Array(1);
+            window.crypto.getRandomValues(value);
+            return value[0] / 4294967296;
+        }
+
+        function finishStream() {
+            if (streamFrame) {
+                cancelAnimationFrame(streamFrame);
+                streamFrame = null;
+            }
+
+            reviewText.value = activeReview;
+            reviewText.classList.remove("is-streaming");
+        }
+
+        function streamReview(review, animate = true) {
+            activeReview = review;
+
+            if (streamFrame) {
+                cancelAnimationFrame(streamFrame);
+                streamFrame = null;
+            }
+
+            if (!animate || reducedMotion || !reviewPanel.open) {
+                reviewText.value = review;
+                reviewText.classList.remove("is-streaming");
+                return;
+            }
+
+            let visibleCharacters = 0;
+            let lastFrameTime = 0;
+            const charactersPerFrame = Math.max(1, Math.ceil(review.length / 120));
+            const frameDelay = 26;
+            reviewText.value = "";
+            reviewText.classList.add("is-streaming");
+            copyStatus.textContent = "Composing review...";
+
+            function reveal(timestamp) {
+                if (timestamp - lastFrameTime < frameDelay) {
+                    streamFrame = requestAnimationFrame(reveal);
+                    return;
+                }
+
+                lastFrameTime = timestamp;
+                visibleCharacters = Math.min(visibleCharacters + charactersPerFrame, review.length);
+                reviewText.value = review.slice(0, visibleCharacters);
+
+                if (visibleCharacters < review.length) {
+                    streamFrame = requestAnimationFrame(reveal);
+                } else {
+                    streamFrame = null;
+                    reviewText.classList.remove("is-streaming");
+                    copyStatus.textContent = "";
+                }
+            }
+
+            streamFrame = requestAnimationFrame(reveal);
+        }
+
+        async function copyReview(message = "Review copied. Paste it after the review page opens.") {
+            finishStream();
+            reviewText.select();
+            reviewText.setSelectionRange(0, reviewText.value.length);
+
+            try {
+                await navigator.clipboard.writeText(reviewText.value);
+                copyStatus.textContent = message;
+            } catch (error) {
+                document.execCommand("copy");
+                copyStatus.textContent = message;
             }
         }
 
-        // Add click event listeners to all dialogs once when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            const dialogs = document.querySelectorAll('dialog');
+        form.addEventListener("change", () => pickReview(true));
+        document.getElementById("refreshReview").addEventListener("click", () => pickReview(true));
+        document.getElementById("copyReview").addEventListener("click", () => copyReview("Review copied."));
+        reviewPanel.addEventListener("toggle", () => {
+            if (reviewPanel.open && !reviewHasOpened) {
+                reviewHasOpened = true;
+                if (activeReview) {
+                    streamReview(activeReview);
+                } else {
+                    pickReview(false);
+                }
+            }
+        });
 
-            dialogs.forEach(dialog => {
-                dialog.addEventListener('click', (e) => {
-                    const dialogDimensions = dialog.getBoundingClientRect();
-                    if (
-                        e.clientX < dialogDimensions.left ||
-                        e.clientX > dialogDimensions.right ||
-                        e.clientY < dialogDimensions.top ||
-                        e.clientY > dialogDimensions.bottom
-                    ) {
-                        dialog.close();
-                    }
-                });
+        document.querySelectorAll("[data-review-link]").forEach((link) => {
+            link.addEventListener("click", async (event) => {
+                event.preventDefault();
+                const nextTab = window.open("", "_blank");
+                await copyReview("Review copied. The review page is opening now.");
 
-                // Prevent clicks inside the modal from closing it
-                dialog.querySelector('.modal-content').addEventListener('click', (e) => {
-                    e.stopPropagation();
-                });
+                if (nextTab) {
+                    nextTab.opener = null;
+                    nextTab.location.href = link.href;
+                } else {
+                    window.location.href = link.href;
+                }
             });
         });
+
+        pickReview(false, false);
     </script>
 </body>
 
