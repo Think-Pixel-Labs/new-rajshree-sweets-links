@@ -206,152 +206,85 @@
     </main>
 
     <script>
-        const REVIEW_POOL_SIZE = 10000;
-        const reviewSeeds = {
-            openers: [
-                "Fresh sweets and warm service.",
-                "Lovely sweets with a fresh taste.",
-                "A really pleasant sweet-shop experience.",
-                "Fresh flavours and friendly people.",
-                "Great place for traditional sweets.",
-                "A dependable spot for sweets in Varanasi.",
-                "Loved the taste and the service.",
-                "Very nice sweets and snacks.",
-                "Clean taste and a welcoming feel.",
-                "A sweet little stop worth visiting.",
-                "Good quality and polite service.",
-                "Fresh items with a homely touch.",
-                "A nice place for family sweet orders.",
-                "Tasty sweets and a smooth experience.",
-                "Fresh, flavorful, and nicely packed.",
-                "Traditional taste done really well.",
-                "A cheerful place for sweet cravings.",
-                "The sweets felt fresh and well made.",
-                "Simple, tasty, and satisfying.",
-                "A lovely local favourite for sweets."
-            ],
-            taste: [
-                "the flavours felt balanced",
-                "the sweets tasted authentic",
-                "the snacks were enjoyable",
-                "the quality felt consistent",
-                "the freshness stood out",
-                "the taste was rich but not heavy",
-                "the texture was very nice",
-                "the mithai tasted fresh",
-                "the flavours felt traditional",
-                "the sweets were neatly prepared",
-                "the taste felt clean",
-                "the items were satisfying",
-                "the preparation felt thoughtful",
-                "the sweetness was just right",
-                "everything tasted well made",
-                "the freshness made a difference",
-                "the sweets had a nice homemade feel",
-                "the flavours were easy to enjoy",
-                "the snacks paired nicely with the sweets",
-                "the quality made the order worthwhile"
-            ],
-            value: [
-                "pricing felt fair",
-                "the quantity felt good",
-                "the value was nice",
-                "the order felt worth it",
-                "the rates felt reasonable",
-                "the portions were satisfying",
-                "it felt good for the price",
-                "the value matched the quality",
-                "the bill felt comfortable",
-                "the price-to-quality balance was good",
-                "it was easy to order a little extra",
-                "the family box felt practical",
-                "the pricing made sense",
-                "the order felt generous",
-                "the value was easy to appreciate",
-                "the quantity worked well",
-                "the price felt approachable",
-                "the quality justified the order",
-                "the overall value was solid",
-                "the portions felt nicely managed"
-            ],
-            service: [
-                "the staff was polite",
-                "service felt warm",
-                "the team was helpful",
-                "the order process was smooth",
-                "the people were welcoming",
-                "the staff handled things nicely",
-                "the menu was easy to choose from",
-                "the variety was helpful",
-                "ordering felt simple",
-                "the team had a friendly attitude",
-                "the visit felt comfortable",
-                "the shop felt clean",
-                "the atmosphere was pleasant",
-                "the place had a nice local charm",
-                "the overall vibe was positive",
-                "the counter service was easy",
-                "the staff made the visit better",
-                "the shop felt family-friendly",
-                "the selection made ordering easy",
-                "the whole experience felt smooth"
-            ],
-            closers: [
-                "Would happily visit again.",
-                "Definitely worth trying.",
-                "A good choice for fresh sweets.",
-                "Happy to recommend it.",
-                "A nice option for family orders.",
-                "Will order again.",
-                "A lovely sweet shop overall.",
-                "Great for quick sweet cravings.",
-                "Worth visiting in Varanasi.",
-                "A dependable local choice.",
-                "Everyone at home liked it.",
-                "The experience felt satisfying.",
-                "A place I would return to.",
-                "Really enjoyed the order.",
-                "Good taste and good service.",
-                "A pleasant experience overall.",
-                "Perfect for traditional sweets.",
-                "Simple and genuinely good.",
-                "A sweet experience, literally.",
-                "Nicely done from taste to service."
-            ]
-        };
-        const positiveReviews = buildReviewPool();
+        const REVIEW_CONFIG_URL = "reviews.json";
         const recentReviewIndexes = [];
         const reviewText = document.getElementById("reviewText");
         const copyStatus = document.getElementById("copyStatus");
         const reviewPanel = document.getElementById("reviewPanel");
+        const refreshReviewButton = document.getElementById("refreshReview");
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         let activeReview = "";
         let streamFrame = null;
         let reviewHasOpened = false;
+        let reviewConfig = null;
+        let reviewPoolSize = 0;
 
-        function buildReviewPool() {
-            const templates = [
-                (opener, taste, value, service, closer) => `${opener} ${capitalize(taste)}, ${value}, and ${service}. ${closer}`,
-                (opener, taste, value, service, closer) => `${opener} ${capitalize(service)}, ${taste}, and ${value}. ${closer}`,
-                (opener, taste, value, service, closer) => `${opener} ${capitalize(taste)}, and ${service}. ${closer}`,
-                (opener, taste, value, service, closer) => `${opener} ${capitalize(value)}, ${taste}, and ${service}. ${closer}`
-            ];
-            const reviews = [];
+        async function initializeReviews() {
+            refreshReviewButton.disabled = true;
+            reviewText.value = "Loading review options...";
 
-            for (const opener of reviewSeeds.openers) {
-                for (const taste of reviewSeeds.taste) {
-                    for (const value of reviewSeeds.value) {
-                        for (const service of reviewSeeds.service) {
-                            const closer = reviewSeeds.closers[reviews.length % reviewSeeds.closers.length];
-                            const template = templates[reviews.length % templates.length];
-                            reviews.push(template(opener, taste, value, service, closer));
-                            if (reviews.length === REVIEW_POOL_SIZE) return reviews;
-                        }
-                    }
-                }
+            try {
+                reviewConfig = await loadReviewConfig();
+                reviewPoolSize = Math.min(reviewConfig.poolSize, getCombinationCount(reviewConfig));
+                pickReview(false, false);
+                refreshReviewButton.disabled = false;
+                copyStatus.textContent = "";
+            } catch (error) {
+                reviewText.value = "Review options could not load. Please refresh the page.";
+                copyStatus.textContent = "Could not load reviews.json.";
             }
+        }
 
-            return reviews;
+        async function loadReviewConfig() {
+            const response = await fetch(REVIEW_CONFIG_URL, { cache: "no-store" });
+            if (!response.ok) throw new Error("Review config request failed");
+
+            const config = await response.json();
+            validateReviewConfig(config);
+            return config;
+        }
+
+        function validateReviewConfig(config) {
+            const requiredKeys = ["templates", "openers", "taste", "value", "service", "closers"];
+            const hasAllKeys = requiredKeys.every((key) => Array.isArray(config[key]) && config[key].length > 0);
+
+            if (!hasAllKeys || !Number.isInteger(config.poolSize) || config.poolSize < 1) {
+                throw new Error("Review config is incomplete");
+            }
+        }
+
+        function getCombinationCount(config) {
+            return config.templates.length
+                * config.openers.length
+                * config.taste.length
+                * config.value.length
+                * config.service.length
+                * config.closers.length;
+        }
+
+        function buildReviewFromIndex(index) {
+            const template = pickByIndex(reviewConfig.templates, index);
+            const opener = pickByIndex(reviewConfig.openers, Math.floor(index / reviewConfig.templates.length));
+            const taste = pickByIndex(reviewConfig.taste, Math.floor(index / (reviewConfig.templates.length * reviewConfig.openers.length)));
+            const value = pickByIndex(reviewConfig.value, Math.floor(index / (reviewConfig.templates.length * reviewConfig.openers.length * reviewConfig.taste.length)));
+            const service = pickByIndex(reviewConfig.service, Math.floor(index / (reviewConfig.templates.length * reviewConfig.openers.length * reviewConfig.taste.length * reviewConfig.value.length)));
+            const closer = pickByIndex(reviewConfig.closers, Math.floor(index / (reviewConfig.templates.length * reviewConfig.openers.length * reviewConfig.taste.length * reviewConfig.value.length * reviewConfig.service.length)));
+
+            return template
+                .replaceAll("{opener}", opener)
+                .replaceAll("{taste}", taste)
+                .replaceAll("{Taste}", capitalize(taste))
+                .replaceAll("{value}", value)
+                .replaceAll("{Value}", capitalize(value))
+                .replaceAll("{service}", service)
+                .replaceAll("{Service}", capitalize(service))
+                .replaceAll("{closer}", closer)
+                .replace(/\s+/g, " ")
+                .trim();
+        }
+
+        function pickByIndex(items, index) {
+            return items[index % items.length];
         }
 
         function capitalize(text) {
@@ -359,20 +292,25 @@
         }
 
         function pickReview(forceNew = false, animate = true) {
-            let index = pickRandomIndex(positiveReviews.length);
+            if (!reviewConfig || reviewPoolSize < 1) return;
 
-            for (let attempt = 0; attempt < 12 && recentReviewIndexes.includes(index); attempt += 1) {
-                index = pickRandomIndex(positiveReviews.length);
+            let index = pickRandomIndex(reviewPoolSize);
+
+            for (let attempt = 0; attempt < 16 && recentReviewIndexes.includes(index); attempt += 1) {
+                index = pickRandomIndex(reviewPoolSize);
             }
 
-            if (forceNew && positiveReviews[index] === activeReview) {
-                index = (index + 1 + pickRandomIndex(positiveReviews.length - 1)) % positiveReviews.length;
+            let review = buildReviewFromIndex(index);
+
+            if (forceNew && review === activeReview && reviewPoolSize > 1) {
+                index = (index + 1 + pickRandomIndex(reviewPoolSize - 1)) % reviewPoolSize;
+                review = buildReviewFromIndex(index);
             }
 
             recentReviewIndexes.push(index);
-            if (recentReviewIndexes.length > 80) recentReviewIndexes.shift();
+            if (recentReviewIndexes.length > 120) recentReviewIndexes.shift();
             copyStatus.textContent = "";
-            streamReview(positiveReviews[index], animate);
+            streamReview(review, animate);
         }
 
         function pickRandomIndex(max) {
@@ -441,6 +379,7 @@
         }
 
         async function copyReviewBeforeNavigation() {
+            if (!activeReview && reviewConfig) pickReview(false, false);
             finishStream();
             const message = "Review copied. Paste it after the review page opens.";
             copyStatus.textContent = message;
@@ -475,7 +414,7 @@
             }
         }
 
-        document.getElementById("refreshReview").addEventListener("click", () => pickReview(true));
+        refreshReviewButton.addEventListener("click", () => pickReview(true));
         reviewPanel.addEventListener("toggle", () => {
             if (reviewPanel.open && !reviewHasOpened) {
                 reviewHasOpened = true;
@@ -491,7 +430,7 @@
             link.addEventListener("click", openReviewLink);
         });
 
-        pickReview(false, false);
+        initializeReviews();
     </script>
 </body>
 

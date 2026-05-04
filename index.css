@@ -353,6 +353,11 @@ textarea.is-streaming {
     background: #fff;
 }
 
+.secondary-action:disabled {
+    cursor: wait;
+    opacity: 0.62;
+}
+
 .primary-action {
     color: #fff;
     border: 0;
