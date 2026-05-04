@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/webp" href="https://assets.newrajshreesweets.com/icon.webp">
@@ -34,8 +34,7 @@
             <div class="hero-copy">
                 <p class="eyebrow">Authentic sweets from Varanasi</p>
                 <h1 id="page-title">New Rajshree Sweets</h1>
-                <p class="tagline">A refined quick-link experience for ordering, connecting, and sharing a thoughtful
-                    review in seconds.</p>
+                <p class="tagline">Order, connect, and write a thoughtful review with a little more ease.</p>
             </div>
         </section>
 
@@ -44,7 +43,7 @@
                 <summary>
                     <span class="summary-kicker">Review helper</span>
                     <span class="summary-title">Create a ready-to-post review</span>
-                    <span class="summary-note">Choose Agree, Neutral, or Could be better, then post with one click.</span>
+                    <span class="summary-note">Choose what matched your visit and get a short review that feels natural.</span>
                     <span class="summary-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
                             <path d="m6 9 6 6 6-6" />
@@ -221,7 +220,7 @@
                     </span>
                     <span><strong>Call</strong><small>+91 97926 77770</small></span>
                 </a>
-                <a class="link-card" href="https://wa.me/919792677770" target="_blank" rel="noopener noreferrer">
+                <a class="link-card" href="https://wa.me/919792677770?text=Hi%20New%20Rajshree%20Sweets%2C%20I%20need%20help%20with%20an%20order." target="_blank" rel="noopener noreferrer">
                     <span class="link-icon">
                         <svg aria-hidden="true" viewBox="0 0 24 24">
                             <path d="M4 20l1.2-4A8 8 0 1 1 8 18.8L4 20Z" />
@@ -1770,8 +1769,129 @@
                   ]
         };
 
-        const historyByTone = { agree: [], neutral: [], better: [] };
+        const reviewHistoryBySignature = {};
         const questionNames = ["quality", "affordability", "ordering", "hospitality", "vibe"];
+        const reviewCopy = {
+            quality: {
+                agree: [
+                    "The sweets tasted fresh and nicely made.",
+                    "The flavours felt balanced and familiar.",
+                    "Everything we tried had a clean, fresh taste."
+                ],
+                neutral: [
+                    "A few items stood out more than the rest, but the overall taste was pleasant.",
+                    "The sweets were good overall, with some flavours working better than others.",
+                    "The taste was enjoyable, especially in the fresher items."
+                ],
+                better: [
+                    "A little more consistency in freshness would make the experience even better.",
+                    "Some items could feel fresher, though the traditional flavour was still there.",
+                    "The taste was nice, and a bit more consistency would really help."
+                ]
+            },
+            affordability: {
+                agree: [
+                    "The pricing felt fair for the quality.",
+                    "The quantity and price felt well balanced.",
+                    "It felt worth the amount paid."
+                ],
+                neutral: [
+                    "The pricing felt okay for a casual order.",
+                    "The value was decent, especially for a family box.",
+                    "The bill felt reasonable for what we picked."
+                ],
+                better: [
+                    "A little sharper value would make it easier to order more often.",
+                    "The pricing could feel slightly better, but the quality still made the order worthwhile.",
+                    "A bit more value in portions would make it even nicer."
+                ]
+            },
+            ordering: {
+                agree: [
+                    "Choosing from the menu was simple.",
+                    "The variety made it easy to pick something for everyone.",
+                    "The ordering process felt smooth and clear."
+                ],
+                neutral: [
+                    "The menu had enough choice without feeling too confusing.",
+                    "Ordering was manageable, and the selection covered the basics well.",
+                    "The options were useful for a quick sweet-shop order."
+                ],
+                better: [
+                    "The menu could be a little clearer, but we still found what we needed.",
+                    "Ordering can be made smoother, though the variety is helpful.",
+                    "A more organized menu would improve the experience."
+                ]
+            },
+            hospitality: {
+                agree: [
+                    "The staff was polite and welcoming.",
+                    "The team handled the order with a warm attitude.",
+                    "Service felt friendly without being pushy."
+                ],
+                neutral: [
+                    "The service was simple and polite.",
+                    "The staff helped when needed.",
+                    "The overall service felt comfortable."
+                ],
+                better: [
+                    "Service could be a little quicker, but the staff was polite.",
+                    "A bit more attentiveness would help, though the team was respectful.",
+                    "The service has room to improve, but the people were courteous."
+                ]
+            },
+            vibe: {
+                agree: [
+                    "The shop felt clean and pleasant.",
+                    "The place had a warm local charm.",
+                    "The atmosphere suited a traditional sweet shop."
+                ],
+                neutral: [
+                    "The shop had a simple, comfortable feel.",
+                    "The ambience was easygoing and familiar.",
+                    "The place felt fine for a quick visit."
+                ],
+                better: [
+                    "The shop can feel a little busy, but it still has a nice local feel.",
+                    "A more polished setup would lift the visit, though the place feels welcoming.",
+                    "The ambience could be neater, but it still feels like a familiar local spot."
+                ]
+            }
+        };
+        const reviewOpeners = {
+            agree: [
+                "New Rajshree Sweets made a lovely impression.",
+                "Had a genuinely nice experience at New Rajshree Sweets.",
+                "New Rajshree Sweets felt like a dependable sweet-shop stop."
+            ],
+            neutral: [
+                "New Rajshree Sweets was a good local choice.",
+                "My visit to New Rajshree Sweets was pleasant overall.",
+                "New Rajshree Sweets gave us a simple, comfortable experience."
+            ],
+            better: [
+                "New Rajshree Sweets has a good base and can be even better.",
+                "The experience at New Rajshree Sweets was decent overall.",
+                "New Rajshree Sweets still feels worth trying for traditional sweets."
+            ]
+        };
+        const reviewClosers = {
+            agree: [
+                "Would happily recommend it.",
+                "Definitely worth visiting again.",
+                "A sweet place I would return to."
+            ],
+            neutral: [
+                "I would consider ordering again.",
+                "A nice option for a regular sweet craving.",
+                "Worth trying when you want something familiar."
+            ],
+            better: [
+                "With a few small improvements, it could be a much stronger experience.",
+                "Still, I would not mind giving it another try.",
+                "There is room to improve, but the place has promise."
+            ]
+        };
         const reviewText = document.getElementById("reviewText");
         const copyStatus = document.getElementById("copyStatus");
         const form = document.getElementById("reviewForm");
@@ -1781,36 +1901,72 @@
         let streamFrame = null;
         let reviewHasOpened = false;
 
-        function getSelectedTone() {
-            const values = questionNames.map((name) => new FormData(form).get(name));
+        function getSelectedAnswers() {
+            const formData = new FormData(form);
+            return questionNames.reduce((answers, name) => {
+                answers[name] = formData.get(name) || "agree";
+                return answers;
+            }, {});
+        }
+
+        function getReviewTone(answers) {
+            const values = Object.values(answers);
             const counts = values.reduce((result, value) => {
                 result[value] = (result[value] || 0) + 1;
                 return result;
             }, {});
 
             if ((counts.agree || 0) >= 4) return "agree";
-            if ((counts.better || 0) >= 3) return "better";
+            if ((counts.better || 0) >= 2) return "better";
             return "neutral";
         }
 
-        function pickReview(forceNew = false, animate = true) {
-            const tone = getSelectedTone();
-            const pool = reviewPools[tone];
-            const recent = historyByTone[tone];
-            const available = pool
-                .map((review, index) => ({ review, index }))
-                .filter((item) => !recent.includes(item.index) || recent.length > 18);
-            const candidates = available.length ? available : pool.map((review, index) => ({ review, index }));
-            let selected = candidates[Math.floor(cryptoRandom() * candidates.length)];
+        function pickFrom(items) {
+            return items[Math.floor(cryptoRandom() * items.length)];
+        }
 
-            if (forceNew && selected.review === activeReview && candidates.length > 1) {
-                selected = candidates[(candidates.indexOf(selected) + 1) % candidates.length];
+        function shuffle(items) {
+            return items
+                .map((item) => ({ item, sort: cryptoRandom() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ item }) => item);
+        }
+
+        function composeReview() {
+            const answers = getSelectedAnswers();
+            const tone = getReviewTone(answers);
+            const priorityNames = [
+                ...shuffle(questionNames.filter((name) => answers[name] !== "agree")),
+                ...shuffle(questionNames.filter((name) => answers[name] === "agree"))
+            ];
+            const sentenceCount = 2;
+            const sentences = priorityNames
+                .slice(0, sentenceCount)
+                .map((name) => pickFrom(reviewCopy[name][answers[name]]));
+
+            return [
+                pickFrom(reviewOpeners[tone]),
+                ...sentences,
+                pickFrom(reviewClosers[tone])
+            ].join(" ");
+        }
+
+        function pickReview(forceNew = false, animate = true) {
+            const answers = getSelectedAnswers();
+            const signature = questionNames.map((name) => answers[name]).join("|");
+            const recent = reviewHistoryBySignature[signature] || [];
+            const candidates = Array.from({ length: 10 }, composeReview);
+            let selected = candidates.find((review) => !recent.includes(review)) || candidates[0];
+
+            if (forceNew && selected === activeReview && candidates.length > 1) {
+                selected = candidates.find((review) => review !== activeReview) || selected;
             }
 
-            recent.push(selected.index);
-            if (recent.length > 18) recent.shift();
+            recent.push(selected);
+            if (recent.length > 8) recent.shift();
+            reviewHistoryBySignature[signature] = recent;
             copyStatus.textContent = "";
-            streamReview(selected.review, animate);
+            streamReview(selected, animate);
         }
 
         function cryptoRandom() {
