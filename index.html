@@ -44,7 +44,7 @@
                 <summary>
                     <span class="summary-kicker">Review helper</span>
                     <span class="summary-title">Create a ready-to-post review</span>
-                    <span class="summary-note">Answer 4 quick prompts, refresh, copy, and post.</span>
+                    <span class="summary-note">Choose Agree, Neutral, or Could be better, then post with one click.</span>
                     <span class="summary-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
                             <path d="m6 9 6 6 6-6" />
@@ -54,7 +54,7 @@
                 <div class="panel-body review-layout">
                     <form class="review-form" id="reviewForm">
                         <fieldset class="question">
-                            <legend>About the quality of the products</legend>
+                            <legend>The sweets and snacks tasted fresh and well made.</legend>
                             <div class="segmented" role="radiogroup" aria-label="Product quality rating">
                                 <label><input type="radio" name="quality" value="agree" checked><span>Agree</span></label>
                                 <label><input type="radio" name="quality" value="neutral"><span>Neutral</span></label>
@@ -63,7 +63,7 @@
                         </fieldset>
 
                         <fieldset class="question">
-                            <legend>About the affordability of the products</legend>
+                            <legend>The pricing felt fair for the quality and quantity.</legend>
                             <div class="segmented" role="radiogroup" aria-label="Product affordability rating">
                                 <label><input type="radio" name="affordability" value="agree" checked><span>Agree</span></label>
                                 <label><input type="radio" name="affordability" value="neutral"><span>Neutral</span></label>
@@ -72,7 +72,7 @@
                         </fieldset>
 
                         <fieldset class="question">
-                            <legend>About the ease of ordering and number of offerings</legend>
+                            <legend>The menu variety and ordering process felt easy to manage.</legend>
                             <div class="segmented" role="radiogroup" aria-label="Ordering and offerings rating">
                                 <label><input type="radio" name="ordering" value="agree" checked><span>Agree</span></label>
                                 <label><input type="radio" name="ordering" value="neutral"><span>Neutral</span></label>
@@ -81,7 +81,7 @@
                         </fieldset>
 
                         <fieldset class="question">
-                            <legend>About the hospitality</legend>
+                            <legend>The staff was polite, helpful, and welcoming.</legend>
                             <div class="segmented" role="radiogroup" aria-label="Hospitality rating">
                                 <label><input type="radio" name="hospitality" value="agree" checked><span>Agree</span></label>
                                 <label><input type="radio" name="hospitality" value="neutral"><span>Neutral</span></label>
@@ -90,7 +90,7 @@
                         </fieldset>
 
                         <fieldset class="question">
-                            <legend>About the vibes of the shop</legend>
+                            <legend>The shop felt clean, comfortable, and pleasant to visit.</legend>
                             <div class="segmented" role="radiogroup" aria-label="Shop vibes rating">
                                 <label><input type="radio" name="vibe" value="agree" checked><span>Agree</span></label>
                                 <label><input type="radio" name="vibe" value="neutral"><span>Neutral</span></label>
@@ -121,25 +121,28 @@
                         <p class="copy-status" id="copyStatus" role="status"></p>
                     </div>
 
-                    <div class="post-actions" aria-label="Post review links">
-                        <a class="primary-action google-action" data-review-link
-                            href="https://g.page/r/Ce2YNkMx7_wQEBE/review" rel="noopener noreferrer">
-                            <svg aria-hidden="true" viewBox="0 0 24 24">
-                                <path d="M21.8 10.2H12v3.9h5.6c-.2 1.3-1 2.4-2.1 3.1v2.6h3.4c2-1.8 3.1-4.5 3.1-7.6 0-.7-.1-1.3-.2-2Z" />
-                                <path d="M12 22c2.8 0 5.1-.9 6.8-2.5l-3.4-2.6c-.9.6-2.1 1-3.5 1-2.7 0-5-1.8-5.8-4.3H2.7v2.7A10 10 0 0 0 12 22Z" />
-                                <path d="M6.2 13.6a6 6 0 0 1 0-3.2V7.7H2.7a10 10 0 0 0 0 8.6l3.5-2.7Z" />
-                                <path d="M12 6.1c1.5 0 2.9.5 4 1.6l3-3A10 10 0 0 0 2.7 7.7l3.5 2.7C7 7.9 9.3 6.1 12 6.1Z" />
-                            </svg>
-                            Post on Google
-                        </a>
-                        <a class="primary-action justdial-action" data-review-link
-                            href="https://jsdl.in/DT-60YE6YAEU2E" rel="noopener noreferrer">
-                            <svg aria-hidden="true" viewBox="0 0 24 24">
-                                <path d="M4 4h16v16H4z" />
-                                <path d="M8 15.5c1.1.8 2.4 1.2 4 1.2 2.6 0 4-1.3 4-3.4V7.5" />
-                            </svg>
-                            Post on Justdial
-                        </a>
+                    <div class="post-action-group">
+                        <p class="post-helper">Post buttons copy the selected review first. Paste it on Google or Justdial after the page opens.</p>
+                        <div class="post-actions" aria-label="Post review links">
+                            <a class="primary-action google-action" data-review-link
+                                href="https://g.page/r/Ce2YNkMx7_wQEBE/review" target="_blank" rel="noopener noreferrer">
+                                <svg aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M21.8 10.2H12v3.9h5.6c-.2 1.3-1 2.4-2.1 3.1v2.6h3.4c2-1.8 3.1-4.5 3.1-7.6 0-.7-.1-1.3-.2-2Z" />
+                                    <path d="M12 22c2.8 0 5.1-.9 6.8-2.5l-3.4-2.6c-.9.6-2.1 1-3.5 1-2.7 0-5-1.8-5.8-4.3H2.7v2.7A10 10 0 0 0 12 22Z" />
+                                    <path d="M6.2 13.6a6 6 0 0 1 0-3.2V7.7H2.7a10 10 0 0 0 0 8.6l3.5-2.7Z" />
+                                    <path d="M12 6.1c1.5 0 2.9.5 4 1.6l3-3A10 10 0 0 0 2.7 7.7l3.5 2.7C7 7.9 9.3 6.1 12 6.1Z" />
+                                </svg>
+                                Copy & post on Google
+                            </a>
+                            <a class="primary-action justdial-action" data-review-link
+                                href="https://jsdl.in/DT-60YE6YAEU2E" target="_blank" rel="noopener noreferrer">
+                                <svg aria-hidden="true" viewBox="0 0 24 24">
+                                    <path d="M4 4h16v16H4z" />
+                                    <path d="M8 15.5c1.1.8 2.4 1.2 4 1.2 2.6 0 4-1.3 4-3.4V7.5" />
+                                </svg>
+                                Copy & post on Justdial
+                            </a>
+                        </div>
                     </div>
                 </div>
             </details>
@@ -1899,18 +1902,21 @@
             }
         });
 
-        function copyReviewBeforeNavigation() {
+        async function copyReviewBeforeNavigation() {
             finishStream();
-            const message = "Review copied. Paste it on the review page.";
+            const message = "Review copied. Paste it on Google or Justdial after the page opens.";
             copyStatus.textContent = message;
 
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(reviewText.value).catch(() => {
+            if (navigator.clipboard) {
+                try {
+                    await navigator.clipboard.writeText(reviewText.value);
+                    return;
+                } catch (error) {
                     reviewText.select();
                     reviewText.setSelectionRange(0, reviewText.value.length);
                     document.execCommand("copy");
-                });
-                return;
+                    return;
+                }
             }
 
             reviewText.select();
@@ -1918,14 +1924,23 @@
             document.execCommand("copy");
         }
 
+        async function openReviewLink(event) {
+            event.preventDefault();
+            const link = event.currentTarget;
+            const reviewWindow = window.open("about:blank", "_blank", "noopener,noreferrer");
+
+            await copyReviewBeforeNavigation();
+
+            if (reviewWindow) {
+                reviewWindow.location.href = link.href;
+                return;
+            }
+
+            window.location.href = link.href;
+        }
+
         document.querySelectorAll("[data-review-link]").forEach((link) => {
-            link.addEventListener("pointerdown", copyReviewBeforeNavigation);
-            link.addEventListener("keydown", (event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                    copyReviewBeforeNavigation();
-                }
-            });
-            link.addEventListener("click", copyReviewBeforeNavigation);
+            link.addEventListener("click", openReviewLink);
         });
 
         pickReview(false, false);

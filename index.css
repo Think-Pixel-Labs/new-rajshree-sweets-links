@@ -371,8 +371,16 @@ textarea.is-streaming {
     gap: 10px;
 }
 
-.post-actions {
+.post-action-group {
     grid-column: 1 / -1;
+}
+
+.post-helper {
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1.45;
 }
 
 .secondary-action,
