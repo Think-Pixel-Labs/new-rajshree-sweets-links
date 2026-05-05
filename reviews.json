@@ -1,12 +1,17 @@
 {
-  "poolSize": 1000000,
   "templates": [
     "{opener} {Taste}, {value}, and {service}. {closer}",
     "{opener} {Service}, {taste}, and {value}. {closer}",
-    "{opener} {Taste}, and {service}. {closer}",
+    "{opener} {Taste}, {service}, and {value}. {closer}",
     "{opener} {Value}, {taste}, and {service}. {closer}",
     "{opener} {Taste}. {Service}, and {value}. {closer}",
-    "{opener} {Service}. {Taste}, and {value}. {closer}"
+    "{opener} {Service}. {Taste}, and {value}. {closer}",
+    "{opener} {Taste}, while {service}. {Value}. {closer}",
+    "{opener} {Service}, and {taste}. {Value}. {closer}",
+    "{opener} {Taste}. {Value}, and {service}. {closer}",
+    "{opener} {Service}; {taste}, and {value}. {closer}",
+    "{opener} {Taste}, {value}, and the whole visit felt smooth. {closer}",
+    "{opener} {Service}, {taste}, and the order felt nicely handled. {closer}"
   ],
   "openers": [
     "Fresh sweets and warm service.",

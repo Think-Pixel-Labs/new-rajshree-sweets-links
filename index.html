@@ -204,7 +204,7 @@
 
     <script>
         const REVIEW_CONFIG_URL = "reviews.json";
-        const recentReviewIndexes = [];
+        const recentReviews = [];
         const reviewText = document.getElementById("reviewText");
         const copyStatus = document.getElementById("copyStatus");
         const reviewPanel = document.getElementById("reviewPanel");
@@ -214,7 +214,6 @@
         let streamFrame = null;
         let reviewHasOpened = false;
         let reviewConfig = null;
-        let reviewPoolSize = 0;
 
         async function initializeReviews() {
             refreshReviewButton.disabled = true;
@@ -222,7 +221,6 @@
 
             try {
                 reviewConfig = await loadReviewConfig();
-                reviewPoolSize = Math.min(reviewConfig.poolSize, getCombinationCount(reviewConfig));
                 pickReview(false, false);
                 refreshReviewButton.disabled = false;
                 copyStatus.textContent = "";
@@ -245,27 +243,18 @@
             const requiredKeys = ["templates", "openers", "taste", "value", "service", "closers"];
             const hasAllKeys = requiredKeys.every((key) => Array.isArray(config[key]) && config[key].length > 0);
 
-            if (!hasAllKeys || !Number.isInteger(config.poolSize) || config.poolSize < 1) {
+            if (!hasAllKeys) {
                 throw new Error("Review config is incomplete");
             }
         }
 
-        function getCombinationCount(config) {
-            return config.templates.length
-                * config.openers.length
-                * config.taste.length
-                * config.value.length
-                * config.service.length
-                * config.closers.length;
-        }
-
-        function buildReviewFromIndex(index) {
-            const template = pickByIndex(reviewConfig.templates, index);
-            const opener = pickByIndex(reviewConfig.openers, Math.floor(index / reviewConfig.templates.length));
-            const taste = pickByIndex(reviewConfig.taste, Math.floor(index / (reviewConfig.templates.length * reviewConfig.openers.length)));
-            const value = pickByIndex(reviewConfig.value, Math.floor(index / (reviewConfig.templates.length * reviewConfig.openers.length * reviewConfig.taste.length)));
-            const service = pickByIndex(reviewConfig.service, Math.floor(index / (reviewConfig.templates.length * reviewConfig.openers.length * reviewConfig.taste.length * reviewConfig.value.length)));
-            const closer = pickByIndex(reviewConfig.closers, Math.floor(index / (reviewConfig.templates.length * reviewConfig.openers.length * reviewConfig.taste.length * reviewConfig.value.length * reviewConfig.service.length)));
+        function buildRandomReview() {
+            const template = pickRandomItem(reviewConfig.templates);
+            const opener = pickRandomItem(reviewConfig.openers);
+            const taste = pickRandomItem(reviewConfig.taste);
+            const value = pickRandomItem(reviewConfig.value);
+            const service = pickRandomItem(reviewConfig.service);
+            const closer = pickRandomItem(reviewConfig.closers);
 
             return template
                 .replaceAll("{opener}", opener)
@@ -280,8 +269,8 @@
                 .trim();
         }
 
-        function pickByIndex(items, index) {
-            return items[index % items.length];
+        function pickRandomItem(items) {
+            return items[pickRandomIndex(items.length)];
         }
 
         function capitalize(text) {
@@ -289,23 +278,20 @@
         }
 
         function pickReview(forceNew = false, animate = true) {
-            if (!reviewConfig || reviewPoolSize < 1) return;
+            if (!reviewConfig) return;
 
-            let index = pickRandomIndex(reviewPoolSize);
+            let review = buildRandomReview();
 
-            for (let attempt = 0; attempt < 16 && recentReviewIndexes.includes(index); attempt += 1) {
-                index = pickRandomIndex(reviewPoolSize);
+            for (let attempt = 0; attempt < 16 && recentReviews.includes(review); attempt += 1) {
+                review = buildRandomReview();
             }
 
-            let review = buildReviewFromIndex(index);
-
-            if (forceNew && review === activeReview && reviewPoolSize > 1) {
-                index = (index + 1 + pickRandomIndex(reviewPoolSize - 1)) % reviewPoolSize;
-                review = buildReviewFromIndex(index);
+            if (forceNew && review === activeReview) {
+                review = buildRandomReview();
             }
 
-            recentReviewIndexes.push(index);
-            if (recentReviewIndexes.length > 120) recentReviewIndexes.shift();
+            recentReviews.push(review);
+            if (recentReviews.length > 120) recentReviews.shift();
             copyStatus.textContent = "";
             streamReview(review, animate);
         }
